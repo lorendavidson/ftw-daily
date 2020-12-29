@@ -25,7 +25,7 @@ const AboutPage = () => {
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
-        description: 'About Saunatime',
+        description: 'About Welcomely',
         name: 'About page',
       }}
     >
@@ -35,51 +35,20 @@ const AboutPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h1 className={css.pageTitle}>Experience the unique Finnish home sauna.</h1>
-          <img className={css.coverImage} src={image} alt="My first ice cream." />
+          <h1 className={css.pageTitle}>About Welcomely</h1>
+          <img className={css.coverImage} src={image} alt="" />
 
           <div className={css.contentWrapper}>
-            <div className={css.contentSide}>
-              <p>Did you know that Finland has 3.2 million saunas - almost one sauna per person!</p>
-            </div>
+            <aside className={css.contentSide}>
+              <p>Aside content goes here, maybe.</p>
+            </aside>
 
             <div className={css.contentMain}>
-              <h2>
-                Most of the Finnish saunas are located at the homes of individuals - indeed, most
-                people in Finland live in an apartment with sauna in it. In addition, lots of people
-                have lakeside summer cottages, which also typically come with a separate sauna
-                building near the waterfront.
-              </h2>
-
+              <h2>Quisque vitae dapibus nunc, eu cursus ante. Duis eget erat non diam sodales venenatis non vel purus. Praesent sit amet erat tristique ante pellentesque elementum ac et mi. Vestibulum vel magna eget orci blandit rhoncus. Duis ac urna id metus accumsan hendrerit. Pellentesque posuere est in sapien laoreet, a mollis nunc pulvinar. Proin a sagittis elit. Morbi vehicula sit amet nisl vitae luctus. Nulla accumsan fringilla eleifend.</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eros eros, lobortis ac tincidunt a, iaculis at urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis velit in lorem rhoncus venenatis. Proin vel turpis eleifend, euismod leo eu, luctus massa. Nulla id dapibus ligula, ut auctor velit. Quisque gravida eu sem aliquam pretium. Morbi auctor, lacus quis sodales iaculis, sem mi maximus massa, at bibendum turpis risus vel magna. Maecenas sodales maximus velit. Suspendisse ac nisl tincidunt, porta purus eget, pharetra est. Phasellus id risus tristique, facilisis lectus ut, cursus nunc. Suspendisse leo lectus, finibus quis nisl ut, suscipit ullamcorper lacus. Nulla nec purus sed magna facilisis maximus.</p>
+              <h3 className={css.subtitle}>Are you a venue owner?</h3>
               <p>
-                To truly experience a Finnish sauna, you need to look beyond the public saunas, and
-                instead visit a real home or cottage sauna. Saunatime makes this possible for
-                everyone. All our saunas are owned by individuals willing to let tourists and other
-                curious visitors to enter their sacred spaces.
-              </p>
-
-              <h3 className={css.subtitle}>Are you a sauna owner?</h3>
-
-              <p>
-                Saunatime offers you a good way to earn some extra cash! If you're not using your
-                sauna every evening, why not rent it to other people while it's free. And even if
-                you are using your sauna every evening (we understand, it's so good), why not invite
-                other people to join you when the sauna is already warm! A shared sauna experience
-                is often a more fulfilling one.
-              </p>
-
-              <h3 id="contact" className={css.subtitle}>
-                Create your own marketplace like Saunatime
-              </h3>
-              <p>
-                Saunatime is brought to you by the good folks at{' '}
-                <ExternalLink href="http://sharetribe.com">Sharetribe</ExternalLink>. Would you like
-                to create your own marketplace platform a bit like Saunatime? Or perhaps a mobile
-                app? With Sharetribe it's really easy. If you have a marketplace idea in mind, do
-                get in touch!
-              </p>
-              <p>
-                You can also checkout our{' '}
+                You can also check out our{' '}
                 <ExternalLink href={siteFacebookPage}>Facebook</ExternalLink> and{' '}
                 <ExternalLink href={siteTwitterPage}>Twitter</ExternalLink>.
               </p>

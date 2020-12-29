@@ -36,6 +36,7 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperMain,
   LayoutWrapperFooter,
+  Button,
   Footer,
   BookingPanel,
 } from '../../components';
@@ -48,13 +49,13 @@ import {
   fetchTransactionLineItems,
 } from './ListingPage.duck';
 import SectionImages from './SectionImages';
-import SectionAvatar from './SectionAvatar';
+// import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
 import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionFeaturesMaybe from './SectionFeaturesMaybe';
-import SectionReviews from './SectionReviews';
+// import SectionReviews from './SectionReviews';
 import SectionHostMaybe from './SectionHostMaybe';
-import SectionRulesMaybe from './SectionRulesMaybe';
+// import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
 import css from './ListingPage.module.css';
 
@@ -387,9 +388,10 @@ export class ListingPageComponent extends Component {
       publicData && publicData.category ? (
         <span>
           {categoryLabel(categoryOptions, publicData.category)}
-          <span className={css.separator}>•</span>
         </span>
       ) : null;
+
+    const address = publicData && publicData.location ? publicData.location.address : '';
 
     return (
       <Page
@@ -428,26 +430,21 @@ export class ListingPageComponent extends Component {
                 onManageDisableScrolling={onManageDisableScrolling}
               />
               <div className={css.contentContainer}>
-                <SectionAvatar user={currentAuthor} params={params} />
                 <div className={css.mainContent}>
                   <SectionHeading
                     priceTitle={priceTitle}
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
                     category={category}
-                    hostLink={hostLink}
-                    showContactUser={showContactUser}
-                    onContactUser={this.onContactUser}
+                    address={address}
                   />
                   <SectionDescriptionMaybe description={description} />
                   <SectionFeaturesMaybe options={amenityOptions} publicData={publicData} />
-                  <SectionRulesMaybe publicData={publicData} />
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
-                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
                   <SectionHostMaybe
                     title={title}
                     listing={currentListing}
@@ -478,6 +475,9 @@ export class ListingPageComponent extends Component {
                   lineItems={lineItems}
                   fetchLineItemsInProgress={fetchLineItemsInProgress}
                   fetchLineItemsError={fetchLineItemsError}
+                  hostLink={hostLink}
+                  showContactUser={showContactUser}
+                  onContactUser={this.onContactUser}
                 />
               </div>
             </div>

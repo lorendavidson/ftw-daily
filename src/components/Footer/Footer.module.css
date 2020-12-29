@@ -83,7 +83,7 @@
 
   @media (--viewportMedium) {
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 0;
   }
 }
@@ -95,6 +95,7 @@
   display: none;
   margin-right: 24px;
   margin-bottom: 24px;
+  align-self: flex-start;
 
   @media (--viewportMedium) {
     display: block;
@@ -103,11 +104,10 @@
   }
   @media (--viewportLarge) {
     flex-basis: 240px;
-    margin-right: 57px;
+    margin-right: auto;
   }
   @media (--viewportLargeWithPaddings) {
     flex-basis: 250px;
-    margin-right: 12px;
   }
 }
 

@@ -1,13 +1,15 @@
 import React from 'react';
 import { bool, func, shape, string } from 'prop-types';
 import classNames from 'classnames';
+import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
-import { FormattedMessage } from '../../util/reactIntl';
+import { intlShape, injectIntl, FormattedMessage } from '../../util/reactIntl';
 import { findOptionsForSelectFilter } from '../../util/search';
+import { maxLength, required, composeValidators } from '../../util/validators';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Button, FieldCheckboxGroup, Form } from '../../components';
+import { Button, FieldCheckboxGroup, FieldTextInput, Form } from '../../components';
 
 import css from './EditListingFeaturesForm.module.css';
 
@@ -23,6 +25,7 @@ const EditListingFeaturesFormComponent = props => (
         className,
         name,
         handleSubmit,
+        intl,
         pristine,
         saveActionMsg,
         updated,
@@ -35,6 +38,13 @@ const EditListingFeaturesFormComponent = props => (
       const submitReady = (updated && pristine) || ready;
       const submitInProgress = updateInProgress;
       const submitDisabled = disabled || submitInProgress;
+
+      const descriptionMessage = intl.formatMessage({
+        id: 'EditListingFeaturesForm.description',
+      });
+      const descriptionPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingFeaturesForm.descriptionPlaceholder',
+      });
 
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (
@@ -56,6 +66,15 @@ const EditListingFeaturesFormComponent = props => (
           {errorMessageShowListing}
 
           <FieldCheckboxGroup className={css.features} id={name} name={name} options={options} />
+
+          <FieldTextInput
+            id="description"
+            name="description"
+            className={css.description}
+            type="textarea"
+            label={descriptionMessage}
+            placeholder={descriptionPlaceholderMessage}
+          />
 
           <Button
             className={css.submitButton}
@@ -98,4 +117,4 @@ EditListingFeaturesFormComponent.propTypes = {
 
 const EditListingFeaturesForm = EditListingFeaturesFormComponent;
 
-export default EditListingFeaturesForm;
+export default compose(injectIntl)(EditListingFeaturesForm);

@@ -9,7 +9,7 @@ import { propTypes, LISTING_STATE_CLOSED, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from 
 import { formatMoney } from '../../util/currency';
 import { parse, stringify } from '../../util/urlHelpers';
 import config from '../../config';
-import { ModalInMobile, Button } from '../../components';
+import { ModalInMobile, InlineTextButton, Button } from '../../components';
 import { BookingDatesForm } from '../../forms';
 
 import css from './BookingPanel.module.css';
@@ -69,12 +69,14 @@ const BookingPanel = props => {
     lineItems,
     fetchLineItemsInProgress,
     fetchLineItemsError,
+    showContactUser,
+    onContactUser,
   } = props;
 
   const price = listing.attributes.price;
   const hasListingState = !!listing.attributes.state;
   const isClosed = hasListingState && listing.attributes.state === LISTING_STATE_CLOSED;
-  const showBookingDatesForm = hasListingState && !isClosed;
+  const showBookingDatesForm = false; // hasListingState && !isClosed;
   const showClosedListingHelpText = listing.id && isClosed;
   const { formattedPrice, priceTitle } = priceData(price, intl);
   const isBook = !!parse(location.search).book;
@@ -114,10 +116,13 @@ const BookingPanel = props => {
           </div>
         </div>
 
-        <div className={css.bookingHeading}>
-          <h2 className={titleClasses}>{title}</h2>
-          {subTitleText ? <div className={css.bookingHelp}>{subTitleText}</div> : null}
-        </div>
+        {!isOwnListing ? (
+          <div className={css.bookingHeading}>
+            <h2 className={titleClasses}>{title}</h2>
+            {subTitleText ? <div className={css.bookingHelp}>{subTitleText}</div> : null}
+          </div>
+        ) : null}
+
         {showBookingDatesForm ? (
           <BookingDatesForm
             className={css.bookingForm}
@@ -136,6 +141,15 @@ const BookingPanel = props => {
             fetchLineItemsError={fetchLineItemsError}
           />
         ) : null}
+
+        {showContactUser ? (
+          <span className={css.contactWrapper}>
+            <Button rootClassName={css.contactLink} onClick={onContactUser}>
+              <FormattedMessage id="ListingPage.contactUser" />
+            </Button>
+          </span>
+        ) : null}
+
       </ModalInMobile>
       <div className={css.openBookingForm}>
         <div className={css.priceContainer}>
@@ -158,6 +172,15 @@ const BookingPanel = props => {
           <div className={css.closedListingButton}>
             <FormattedMessage id="BookingPanel.closedListingButtonText" />
           </div>
+        ) : null}
+
+        {showContactUser ? (
+          <span className={css.contactWrapper}>
+            <span className={css.separator}>•</span>
+            <InlineTextButton rootClassName={css.contactLink} onClick={onContactUser}>
+              <FormattedMessage id="ListingPage.contactUser" />
+            </InlineTextButton>
+          </span>
         ) : null}
       </div>
     </div>

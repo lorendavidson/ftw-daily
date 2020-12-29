@@ -1,9 +1,9 @@
 {
-  "name": "Saunatime",
-  "short_name": "Saunatime",
+  "name": "Welcomely",
+  "short_name": "Welcomely",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#C0392B",
+  "theme_color": "#95040c",
   "background_color": "#FFFFFF",
   "icons": [
     {

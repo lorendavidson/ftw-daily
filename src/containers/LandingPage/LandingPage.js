@@ -19,8 +19,10 @@ import {
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
-import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
-import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
+import { NamedLink } from '../../components';
+
+import facebookImage from '../../assets/Facebook-1200x630.jpg';
+import twitterImage from '../../assets/Twitter-600x314.jpg';
 import css from './LandingPage.module.css';
 
 export const LandingPageComponent = props => {
@@ -65,6 +67,9 @@ export const LandingPageComponent = props => {
             <li className={css.section}>
               <div className={css.sectionContentFirstChild}>
                 <SectionLocations />
+                <br />
+                <br />
+                <NamedLink name="SearchPage" to={{ search: '?bounds=60.11166194%2C-119.75819035%2C46.07681966%2C-134.50984219' }}>Explore other places in BC</NamedLink>
               </div>
             </li>
             <li className={css.section}>

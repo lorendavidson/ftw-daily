@@ -1,6 +1,6 @@
 {
-  "name": "Sharetribe Flex Template Demo",
-  "description": "Sharetribe Flex Template Demo - Saunatime!",
+  "name": "Sharetribe Flex: Welcomely",
+  "description": "Sharetribe Flex Template - Welcomely",
   "keywords": ["node", "react"],
   "repository": "https://github.com/sharetribe/ftw-daily/",
   "env": {

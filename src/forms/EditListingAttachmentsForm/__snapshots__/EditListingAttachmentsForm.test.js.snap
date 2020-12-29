@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditListingAttachmentsForm matches snapshot 1`] = `
+<ReactFinalForm
+  disabled={false}
+  dispatch={[Function]}
+  fetchErrors={null}
+  fileUploadRequested={false}
+  files={Array []}
+  initialValues={
+    Object {
+      "files": Array [],
+    }
+  }
+  intl={
+    Object {
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "now": [Function],
+    }
+  }
+  onFileUpload={[Function]}
+  onFileUploadHandler={[Function]}
+  onRemoveFile={[Function]}
+  onSubmit={[Function]}
+  onUpdateFileOrder={[Function]}
+  ready={false}
+  render={[Function]}
+  saveActionMsg="Save photos"
+  stripeConnected={false}
+  updateInProgress={false}
+  updated={false}
+/>
+`;
