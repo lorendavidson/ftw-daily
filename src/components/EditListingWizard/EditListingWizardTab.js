@@ -15,6 +15,7 @@ import {
   EditListingFeaturesPanel,
   EditListingLocationPanel,
   EditListingPhotosPanel,
+  EditListingAttachmentsPanel,
   EditListingPoliciesPanel,
   EditListingPricingPanel,
 } from '../../components';
@@ -28,6 +29,7 @@ export const POLICY = 'policy';
 export const LOCATION = 'location';
 export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
+export const ATTACHMENTS = 'attachments';
 
 // EditListingWizardTab component supports these tabs
 export const SUPPORTED_TABS = [
@@ -38,6 +40,7 @@ export const SUPPORTED_TABS = [
   PRICING,
   AVAILABILITY,
   PHOTOS,
+  ATTACHMENTS,
 ];
 
 const pathParamsToNextTab = (params, tab, marketplaceTabs) => {
@@ -261,6 +264,25 @@ const EditListingWizardTab = props => {
         />
       );
     }
+    // case ATTACHMENTS: {
+    //   const submitButtonTranslationKey = isNewListingFlow
+    //     ? 'EditListingWizard.saveNewFiles'
+    //     : 'EditListingWizard.saveEditFiles';
+
+    //   return (
+    //     <EditListingAttachmentsPanel
+    //       {...panelProps(ATTACHMENTS)}
+    //       submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+    //       files={files}
+    //       onFileUpload={onFileUpload}
+    //       onRemoveFile={onRemoveFile}
+    //       onSubmit={values => {
+    //         onCompleteEditListingWizardTab(tab, values);
+    //       }}
+    //       onUpdateFileOrder={onUpdateFileOrder}
+    //     />
+    //   );
+    // }
     default:
       return null;
   }
