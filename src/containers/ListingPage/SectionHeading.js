@@ -9,7 +9,8 @@ const SectionHeading = props => {
   const {
     richTitle,
     category,
-    address
+    address,
+    venue
   } = props;
 
   const unitType = config.bookingUnitType;
@@ -21,15 +22,12 @@ const SectionHeading = props => {
       <div className={css.heading}>
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.author}>
-          <p>{category} <br />Hotel name (todo)</p>
+          <p>{category}</p>
+          <p>{venue}</p>
           <h2 className={css.featuresTitle}>
             <FormattedMessage id="ListingPage.venueAddress" />
           </h2>
           <p>{address}</p>
-          <h2 className={css.featuresTitle}>
-            Capacity
-          </h2>
-          <p>8 guests (general capacity)​,​ 4-6 guests (current COVID-regulations)</p>
         </div>
       </div>
     </div>

@@ -16,6 +16,7 @@ import {
   EditListingLocationPanel,
   EditListingPhotosPanel,
   EditListingAttachmentsPanel,
+  EditListingCapacityPanel,
   EditListingPoliciesPanel,
   EditListingPricingPanel,
 } from '../../components';
@@ -30,6 +31,7 @@ export const LOCATION = 'location';
 export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
 export const ATTACHMENTS = 'attachments';
+export const CAPACITY = 'capacity';
 
 // EditListingWizardTab component supports these tabs
 export const SUPPORTED_TABS = [
@@ -41,6 +43,7 @@ export const SUPPORTED_TABS = [
   AVAILABILITY,
   PHOTOS,
   ATTACHMENTS,
+  CAPACITY,
 ];
 
 const pathParamsToNextTab = (params, tab, marketplaceTabs) => {
@@ -264,25 +267,39 @@ const EditListingWizardTab = props => {
         />
       );
     }
-    // case ATTACHMENTS: {
-    //   const submitButtonTranslationKey = isNewListingFlow
-    //     ? 'EditListingWizard.saveNewFiles'
-    //     : 'EditListingWizard.saveEditFiles';
+    case CAPACITY: {
+      const submitButtonTranslationKey = isNewListingFlow
+        ? 'EditListingWizard.saveNewCapacity'
+        : 'EditListingWizard.saveEditCapacity';
+      return (
+        <EditListingCapacityPanel
+          {...panelProps(CAPACITY)}
+          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          onSubmit={values => {
+            onCompleteEditListingWizardTab(tab, values);
+          }}
+        />
+      );
+    }
+    case ATTACHMENTS: {
+      const submitButtonTranslationKey = isNewListingFlow
+        ? 'EditListingWizard.saveNewFiles'
+        : 'EditListingWizard.saveEditFiles';
 
-    //   return (
-    //     <EditListingAttachmentsPanel
-    //       {...panelProps(ATTACHMENTS)}
-    //       submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-    //       files={files}
-    //       onFileUpload={onFileUpload}
-    //       onRemoveFile={onRemoveFile}
-    //       onSubmit={values => {
-    //         onCompleteEditListingWizardTab(tab, values);
-    //       }}
-    //       onUpdateFileOrder={onUpdateFileOrder}
-    //     />
-    //   );
-    // }
+      return (
+        <EditListingAttachmentsPanel
+          {...panelProps(ATTACHMENTS)}
+          // submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          // files={files}
+          // onFileUpload={onFileUpload}
+          // onRemoveFile={onRemoveFile}
+          // onSubmit={values => {
+          //   onCompleteEditListingWizardTab(tab, values);
+          // }}
+          // onUpdateFileOrder={onUpdateFileOrder}
+        />
+      );
+    }
     default:
       return null;
   }

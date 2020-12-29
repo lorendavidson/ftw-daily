@@ -421,7 +421,7 @@
   }
 }
 
-.featuresTitle {
+.featuresTitle, .capacityTitle {
   /* Font */
   @apply --marketplaceH3FontStyles;
   color: var(--matterColorAnti);

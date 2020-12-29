@@ -74,6 +74,14 @@ export const isUploadImageOverLimitError = error =>
   hasErrorWithCode(error, ERROR_CODE_UPLOAD_OVER_LIMIT);
 
 /**
+ * Check if the given API error (from
+ * `sdk.images.upload()`) is due to the image being over
+ * the size limit.
+ */
+export const isUploadFileOverLimitError = error =>
+  hasErrorWithCode(error, ERROR_CODE_UPLOAD_OVER_LIMIT);
+
+/**
  * Check if the given API error (from `sdk.passwordReset.request()`)
  * is due to no user having the given email address.
  */

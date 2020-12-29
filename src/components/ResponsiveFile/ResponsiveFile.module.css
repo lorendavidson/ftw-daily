@@ -1,0 +1,36 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  width: 100%;
+}
+
+.noFileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--matterColorNegative);
+}
+
+.noFileWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noFileIcon {
+  padding-top: 24px;
+  box-sizing: content-box;
+  stroke: var(--matterColor);
+}
+
+.noFileText {
+  @apply --marketplaceH6FontStyles;
+  color: var(--matterColor);
+  padding-bottom: 24px;
+
+  margin-bottom: 0;
+  @media (--viewportMedium) {
+    margin-bottom: 0;
+  }
+}

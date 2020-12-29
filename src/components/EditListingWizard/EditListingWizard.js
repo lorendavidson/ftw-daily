@@ -26,6 +26,8 @@ import EditListingWizardTab, {
   LOCATION,
   PRICING,
   PHOTOS,
+  CAPACITY,
+  ATTACHMENTS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
 
@@ -39,11 +41,13 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 export const TABS = [
   DESCRIPTION,
   FEATURES,
+  CAPACITY,
   POLICY,
   LOCATION,
   PRICING,
   ...availabilityMaybe,
   PHOTOS,
+  ATTACHMENTS,
 ];
 
 // Tabs are horizontal in small screens
@@ -68,6 +72,10 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelAvailability';
   } else if (tab === PHOTOS) {
     key = 'EditListingWizard.tabLabelPhotos';
+  } else if (tab === CAPACITY) {
+    key = 'EditListingWizard.tabLabelCapacity';
+  } else if (tab === ATTACHMENTS) {
+    key = 'EditListingWizard.tabLabelAttachments';
   }
 
   return intl.formatMessage({ id: key });
@@ -97,6 +105,10 @@ const tabCompleted = (tab, listing) => {
       return !!(description && title);
     case FEATURES:
       return !!(publicData && publicData.amenities);
+    case CAPACITY:
+      return !!(publicData && publicData.capacity);
+    case ATTACHMENTS:
+      return !!(publicData && publicData.files);
     case POLICY:
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:

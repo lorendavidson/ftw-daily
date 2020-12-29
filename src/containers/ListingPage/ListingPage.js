@@ -51,6 +51,7 @@ import {
 import SectionImages from './SectionImages';
 // import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
+import SectionCapacity from './SectionCapacity';
 import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionFeaturesMaybe from './SectionFeaturesMaybe';
 // import SectionReviews from './SectionReviews';
@@ -384,6 +385,7 @@ export class ListingPageComponent extends Component {
 
     const amenityOptions = findOptionsForSelectFilter('amenities', filterConfig);
     const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
+    const capacityOptions = findOptionsForSelectFilter('capacity', filterConfig);
     const category =
       publicData && publicData.category ? (
         <span>
@@ -439,6 +441,8 @@ export class ListingPageComponent extends Component {
                     address={address}
                   />
                   <SectionDescriptionMaybe description={description} />
+                  <SectionCapacity publicData={publicData} options={capacityOptions} />
+                  <br />
                   <SectionFeaturesMaybe options={amenityOptions} publicData={publicData} />
                   <SectionMapMaybe
                     geolocation={geolocation}
