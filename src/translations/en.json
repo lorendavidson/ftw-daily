@@ -268,7 +268,7 @@
   "EditListingWizard.tabLabelAvailability": "Availability",
   "EditListingWizard.tabLabelLocation": "Location",
   "EditListingWizard.tabLabelPhotos": "Photos",
-  "EditListingWizard.tabLabelPolicy": "Policies",
+  "EditListingWizard.tabLabelPolicy": "Rules",
   "EditListingWizard.tabLabelPricing": "Pricing",
   "EmailVerificationForm.finishAccountSetup": "We will need to send you email notifications. To allow this, please verify your email address {email}.",
   "EmailVerificationForm.successButtonText": "Continue exploring",
