@@ -402,9 +402,9 @@
   /* Font */
   @apply --marketplaceH3FontStyles;
   color: var(--matterColorAnti);
-
   margin-top: 0;
   margin-bottom: 13px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 12px;
@@ -421,6 +421,16 @@
   }
 }
 
+.sectionCapacity {
+  padding: 0 24px;
+  margin-bottom: 32px;
+
+  @media (--viewportMedium) {
+    padding: 0;
+    margin-bottom: 52px;
+  }
+}
+
 .featuresTitle, .capacityTitle {
   /* Font */
   @apply --marketplaceH3FontStyles;
@@ -428,6 +438,7 @@
 
   margin-top: 0;
   margin-bottom: 16px;
+  
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 12px;

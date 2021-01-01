@@ -386,6 +386,9 @@ export class ListingPageComponent extends Component {
     const amenityOptions = findOptionsForSelectFilter('amenities', filterConfig);
     const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
     const capacityOptions = findOptionsForSelectFilter('capacity', filterConfig);
+
+    // console.log(publicData);
+
     const category =
       publicData && publicData.category ? (
         <span>
