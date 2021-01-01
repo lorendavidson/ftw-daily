@@ -12,7 +12,7 @@ import { AddFiles, Button, Form, ValidationError } from '../../components';
 
 import css from './EditListingAttachmentsForm.module.css';
 
-const ACCEPT_IMAGES = 'file/*';
+const ACCEPT_FILES = 'file/*';
 
 export class EditListingAttachmentsFormComponent extends Component {
   constructor(props) {
@@ -152,7 +152,7 @@ export class EditListingAttachmentsFormComponent extends Component {
                 <Field
                   id="addFile"
                   name="addFile"
-                  accept={ACCEPT_IMAGES}
+                  accept={ACCEPT_FILES}
                   form={null}
                   label={chooseFileText}
                   type="file"
