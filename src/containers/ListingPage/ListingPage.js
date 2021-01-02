@@ -56,7 +56,7 @@ import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionFeaturesMaybe from './SectionFeaturesMaybe';
 // import SectionReviews from './SectionReviews';
 import SectionHostMaybe from './SectionHostMaybe';
-// import SectionRulesMaybe from './SectionRulesMaybe';
+import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
 import css from './ListingPage.module.css';
 
@@ -397,6 +397,7 @@ export class ListingPageComponent extends Component {
       ) : null;
 
     const address = publicData && publicData.location ? publicData.location.address : '';
+    const venue = publicData && publicData.venue ? publicData.venue : '';
 
     return (
       <Page
@@ -442,6 +443,7 @@ export class ListingPageComponent extends Component {
                     richTitle={richTitle}
                     category={category}
                     address={address}
+                    venue={venue}
                   />
                   <SectionDescriptionMaybe description={description} />
                   <SectionCapacity publicData={publicData} options={capacityOptions} />

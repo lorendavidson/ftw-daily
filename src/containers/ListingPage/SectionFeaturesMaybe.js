@@ -6,11 +6,13 @@ import css from './ListingPage.module.css';
 
 const SectionFeaturesMaybe = props => {
   const { options, publicData } = props;
+  
   if (!publicData) {
     return null;
   }
 
   const selectedOptions = publicData && publicData.amenities ? publicData.amenities : [];
+
   return (
     <div className={css.sectionFeatures}>
       <h2 className={css.featuresTitle}>

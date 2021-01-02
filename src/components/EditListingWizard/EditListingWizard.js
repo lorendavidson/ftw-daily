@@ -46,7 +46,7 @@ export const TABS = [
   LOCATION,
   PRICING,
   ...availabilityMaybe,
-  // ATTACHMENTS,
+  ATTACHMENTS,
   PHOTOS,
 ];
 

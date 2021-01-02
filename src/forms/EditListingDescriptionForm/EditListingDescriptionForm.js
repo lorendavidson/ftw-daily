@@ -48,6 +48,13 @@ const EditListingDescriptionFormComponent = props => (
         }
       );
 
+      const roomMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.room'
+      });
+      const roomPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.roomPlaceholder',
+      });
+
       const descriptionMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.description',
       });
@@ -99,6 +106,16 @@ const EditListingDescriptionFormComponent = props => (
             placeholder={titlePlaceholderMessage}
             maxLength={TITLE_MAX_LENGTH}
             validate={composeValidators(required(titleRequiredMessage), maxLength60Message)}
+            autoFocus
+          />
+
+          <FieldTextInput
+            id="room"
+            name="room"
+            className={css.room}
+            type="text"
+            label={roomMessage}
+            placeholder={roomPlaceholderMessage}
             autoFocus
           />
 

@@ -31,6 +31,10 @@
   composes: formMargins;
 }
 
+.room {
+  composes: formMargins;
+}
+
 .description {
   composes: formMargins;
   flex-shrink: 0;
