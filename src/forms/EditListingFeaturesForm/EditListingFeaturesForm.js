@@ -68,8 +68,8 @@ const EditListingFeaturesFormComponent = props => (
           <FieldCheckboxGroup className={css.features} id={name} name={name} options={options} />
 
           <FieldTextInput
-            id="description"
-            name="description"
+            id="amenitiesDescription"
+            name="amenitiesDescription"
             className={css.description}
             type="textarea"
             label={descriptionMessage}

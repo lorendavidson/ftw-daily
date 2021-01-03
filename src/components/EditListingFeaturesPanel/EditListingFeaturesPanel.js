@@ -29,9 +29,10 @@ const EditListingFeaturesPanel = props => {
 
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
-  const { publicData } = currentListing.attributes;
-
   const isPublished = currentListing.id && currentListing.attributes.state !== LISTING_STATE_DRAFT;
+  
+  const { publicData } = currentListing.attributes;
+  
   const panelTitle = isPublished ? (
     <FormattedMessage
       id="EditListingFeaturesPanel.title"
@@ -42,7 +43,9 @@ const EditListingFeaturesPanel = props => {
   );
 
   const amenities = publicData && publicData.amenities;
-  const initialValues = { amenities };
+  const amenitiesDescription = publicData && publicData.amenitiesDescription;
+
+  const initialValues = { amenities, amenitiesDescription };
 
   return (
     <div className={classes}>
@@ -52,10 +55,10 @@ const EditListingFeaturesPanel = props => {
         name={FEATURES_NAME}
         initialValues={initialValues}
         onSubmit={values => {
-          const { amenities = [] } = values;
+          const { amenities, amenitiesDescription = [] } = values;
 
           const updatedValues = {
-            publicData: { amenities },
+            publicData: { amenities, amenitiesDescription },
           };
           onSubmit(updatedValues);
         }}

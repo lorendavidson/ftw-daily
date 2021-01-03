@@ -6,12 +6,13 @@ import css from './ListingPage.module.css';
 
 const SectionFeaturesMaybe = props => {
   const { options, publicData } = props;
-  
+
   if (!publicData) {
     return null;
   }
 
   const selectedOptions = publicData && publicData.amenities ? publicData.amenities : [];
+  const amenitiesDescription = publicData && publicData.amenitiesDescription ? publicData.amenitiesDescription : null;
 
   return (
     <div className={css.sectionFeatures}>
@@ -24,6 +25,7 @@ const SectionFeaturesMaybe = props => {
         selectedOptions={selectedOptions}
         twoColumns={true}
       />
+      <p>{amenitiesDescription}</p>
     </div>
   );
 };

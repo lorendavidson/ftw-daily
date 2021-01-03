@@ -10,7 +10,7 @@ const SectionHeading = props => {
     richTitle,
     category,
     address,
-    venue
+    room
   } = props;
 
   const unitType = config.bookingUnitType;
@@ -22,8 +22,7 @@ const SectionHeading = props => {
       <div className={css.heading}>
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.author}>
-          <p>{category}</p>
-          <p>{venue}</p>
+          <p>{category}<br />{room}</p>
           <h2 className={css.featuresTitle}>
             <FormattedMessage id="ListingPage.venueAddress" />
           </h2>

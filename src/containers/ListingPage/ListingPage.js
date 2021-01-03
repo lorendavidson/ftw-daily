@@ -397,7 +397,7 @@ export class ListingPageComponent extends Component {
       ) : null;
 
     const address = publicData && publicData.location ? publicData.location.address : '';
-    const venue = publicData && publicData.venue ? publicData.venue : '';
+    const room = publicData && publicData.room ? publicData.room : '';
 
     return (
       <Page
@@ -443,7 +443,7 @@ export class ListingPageComponent extends Component {
                     richTitle={richTitle}
                     category={category}
                     address={address}
-                    venue={venue}
+                    room={room}
                   />
                   <SectionDescriptionMaybe description={description} />
                   <SectionCapacity publicData={publicData} options={capacityOptions} />
