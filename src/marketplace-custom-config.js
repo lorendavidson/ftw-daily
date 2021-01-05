@@ -128,10 +128,10 @@ export const filters = [
     queryParamNames: ['pub_capacity'],
     config: {
       options: [
-        { key: '1to3', label: '1 to 3' },
-        { key: '4to6', label: '4 to 6' },
-        { key: '7to9', label: '7 to 9' },
-        { key: '10plus', label: '10 plus' },
+        { key: '1to10', label: '1 to 10' },
+        { key: '10to20', label: '10 to 20' },
+        { key: '20to30', label: '20 to 30' },
+        { key: '30plus', label: '30+' },
       ],
     },
   },

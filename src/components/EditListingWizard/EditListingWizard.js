@@ -27,7 +27,7 @@ import EditListingWizardTab, {
   PRICING,
   PHOTOS,
   CAPACITY,
-  ATTACHMENTS,
+  // ATTACHMENTS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
 
@@ -46,7 +46,7 @@ export const TABS = [
   LOCATION,
   PRICING,
   ...availabilityMaybe,
-  ATTACHMENTS,
+  // ATTACHMENTS,
   PHOTOS,
 ];
 
@@ -74,10 +74,10 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelPhotos';
   } else if (tab === CAPACITY) {
     key = 'EditListingWizard.tabLabelCapacity';
-  } else if (tab === ATTACHMENTS) {
-    key = 'EditListingWizard.tabLabelAttachments';
+  // } else if (tab === ATTACHMENTS) {
+  //   key = 'EditListingWizard.tabLabelAttachments';
+  // }
   }
-
   return intl.formatMessage({ id: key });
 };
 
@@ -107,8 +107,8 @@ const tabCompleted = (tab, listing) => {
       return !!(publicData && publicData.amenities);
     case CAPACITY:
       return !!(publicData && publicData.capacity);
-    case ATTACHMENTS:
-      return !!(publicData && publicData.files);
+    // case ATTACHMENTS:
+    //   return !!(publicData && publicData.files);
     case POLICY:
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:

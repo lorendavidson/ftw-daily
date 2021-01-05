@@ -15,7 +15,7 @@ import {
   EditListingFeaturesPanel,
   EditListingLocationPanel,
   EditListingPhotosPanel,
-  EditListingAttachmentsPanel,
+  // EditListingAttachmentsPanel,
   EditListingCapacityPanel,
   EditListingPoliciesPanel,
   EditListingPricingPanel,
@@ -30,7 +30,7 @@ export const POLICY = 'policy';
 export const LOCATION = 'location';
 export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
-export const ATTACHMENTS = 'attachments';
+// export const ATTACHMENTS = 'attachments';
 export const CAPACITY = 'capacity';
 
 // EditListingWizardTab component supports these tabs
@@ -42,7 +42,7 @@ export const SUPPORTED_TABS = [
   PRICING,
   AVAILABILITY,
   PHOTOS,
-  ATTACHMENTS,
+  // ATTACHMENTS,
   CAPACITY,
 ];
 
@@ -281,25 +281,25 @@ const EditListingWizardTab = props => {
         />
       );
     }
-    case ATTACHMENTS: {
-      const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewFiles'
-        : 'EditListingWizard.saveEditFiles';
+    // case ATTACHMENTS: {
+    //   const submitButtonTranslationKey = isNewListingFlow
+    //     ? 'EditListingWizard.saveNewFiles'
+    //     : 'EditListingWizard.saveEditFiles';
 
-      return (
-        <EditListingAttachmentsPanel
-          {...panelProps(ATTACHMENTS)}
-          // submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-          // files={files}
-          // onFileUpload={onFileUpload}
-          // onRemoveFile={onRemoveFile}
-          // onSubmit={values => {
-          //   onCompleteEditListingWizardTab(tab, values);
-          // }}
-          // onUpdateFileOrder={onUpdateFileOrder}
-        />
-      );
-    }
+    //   return (
+    //     <EditListingAttachmentsPanel
+    //       {...panelProps(ATTACHMENTS)}
+    //       // submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+    //       // files={files}
+    //       // onFileUpload={onFileUpload}
+    //       // onRemoveFile={onRemoveFile}
+    //       // onSubmit={values => {
+    //       //   onCompleteEditListingWizardTab(tab, values);
+    //       // }}
+    //       // onUpdateFileOrder={onUpdateFileOrder}
+    //     />
+    //   );
+    // }
     default:
       return null;
   }
