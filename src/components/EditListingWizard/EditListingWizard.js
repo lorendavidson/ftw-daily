@@ -98,6 +98,7 @@ const tabCompleted = (tab, listing) => {
     title,
     publicData,
   } = listing.attributes;
+  const files = listing.files;
   const images = listing.images;
 
   switch (tab) {

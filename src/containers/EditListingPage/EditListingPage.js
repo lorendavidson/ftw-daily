@@ -34,8 +34,10 @@ import {
   requestPublishListingDraft,
   requestUpdateListing,
   requestImageUpload,
+  requestFileUpload,
   updateImageOrder,
   removeListingImage,
+  removeListingFile,
   loadData,
   clearUpdatedTab,
   savePayoutDetails,
@@ -73,6 +75,8 @@ export const EditListingPageComponent = props => {
     onUpdateListing,
     onImageUpload,
     onRemoveListingImage,
+    onFileUpload,
+    onRemoveListingFile,
     onManageDisableScrolling,
     onPayoutDetailsFormSubmit,
     onPayoutDetailsFormChange,
@@ -135,6 +139,7 @@ export const EditListingPageComponent = props => {
       updateListingError = null,
       showListingsError = null,
       uploadImageError = null,
+      uploadFileError = null,
     } = page;
     const errors = {
       createListingDraftError,
@@ -142,6 +147,7 @@ export const EditListingPageComponent = props => {
       updateListingError,
       showListingsError,
       uploadImageError,
+      uploadFileError,
       createStripeAccountError,
     };
     // TODO: is this dead code? (shouldRedirect is checked before)
@@ -165,6 +171,8 @@ export const EditListingPageComponent = props => {
       return !removedImageIds.includes(img.id);
     });
 
+    const files = currentListing.files;
+
     const title = isNewListingFlow
       ? intl.formatMessage({ id: 'EditListingPage.titleCreateListing' })
       : intl.formatMessage({ id: 'EditListingPage.titleEditListing' });
@@ -187,6 +195,7 @@ export const EditListingPageComponent = props => {
           newListingPublished={newListingPublished}
           history={history}
           images={images}
+          files={files}
           listing={currentListing}
           availability={{
             calendar: page.availabilityCalendar,
@@ -205,6 +214,8 @@ export const EditListingPageComponent = props => {
           onImageUpload={onImageUpload}
           onUpdateImageOrder={onUpdateImageOrder}
           onRemoveImage={onRemoveListingImage}
+          onFileUpload={onFileUpload}
+          onRemoveFile={onRemoveListingFile}
           onChange={onChange}
           currentUser={currentUser}
           onManageDisableScrolling={onManageDisableScrolling}
@@ -266,11 +277,13 @@ EditListingPageComponent.propTypes = {
   onCreateListingDraft: func.isRequired,
   onPublishListingDraft: func.isRequired,
   onImageUpload: func.isRequired,
+  onFileUpload: func.isRequired,
   onManageDisableScrolling: func.isRequired,
   onPayoutDetailsFormChange: func.isRequired,
   onPayoutDetailsFormSubmit: func.isRequired,
   onUpdateImageOrder: func.isRequired,
   onRemoveListingImage: func.isRequired,
+  onRemoveListingFile: func.isRequired,
   onUpdateListing: func.isRequired,
   onChange: func.isRequired,
   page: object.isRequired,
@@ -341,6 +354,7 @@ const mapDispatchToProps = dispatch => ({
   onCreateListingDraft: values => dispatch(requestCreateListingDraft(values)),
   onPublishListingDraft: listingId => dispatch(requestPublishListingDraft(listingId)),
   onImageUpload: data => dispatch(requestImageUpload(data)),
+  onFileUpload: data => dispatch(requestFileUpload(data)),
   onManageDisableScrolling: (componentId, disableScrolling) =>
     dispatch(manageDisableScrolling(componentId, disableScrolling)),
   onPayoutDetailsFormChange: () => dispatch(stripeAccountClearError()),
@@ -350,6 +364,7 @@ const mapDispatchToProps = dispatch => ({
   onGetStripeConnectAccountLink: params => dispatch(getStripeConnectAccountLink(params)),
   onUpdateImageOrder: imageOrder => dispatch(updateImageOrder(imageOrder)),
   onRemoveListingImage: imageId => dispatch(removeListingImage(imageId)),
+  onRemoveListingFile: fileId => dispatch(removeListingFile(fileId)),
   onChange: () => dispatch(clearUpdatedTab()),
 });
 

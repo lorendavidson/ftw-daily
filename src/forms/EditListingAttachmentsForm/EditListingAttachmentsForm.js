@@ -64,9 +64,6 @@ export class EditListingAttachmentsFormComponent extends Component {
 
           const chooseFileText = (
             <span className={css.chooseFileText}>
-              <span className={css.chooseFile}>
-                <FormattedMessage id="EditListingAttachmentsForm.chooseFile" />
-              </span>
               <span className={css.fileTypes}>
                 <FormattedMessage id="EditListingAttachmentsForm.fileTypes" />
               </span>
@@ -235,7 +232,6 @@ EditListingAttachmentsFormComponent.propTypes = {
   files: array,
   intl: intlShape.isRequired,
   onFileUpload: func.isRequired,
-  onUpdateFileOrder: func.isRequired,
   onSubmit: func.isRequired,
   saveActionMsg: string.isRequired,
   disabled: bool.isRequired,

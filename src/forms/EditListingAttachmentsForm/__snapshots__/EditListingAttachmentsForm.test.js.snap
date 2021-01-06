@@ -28,7 +28,6 @@ exports[`EditListingAttachmentsForm matches snapshot 1`] = `
   onFileUploadHandler={[Function]}
   onRemoveFile={[Function]}
   onSubmit={[Function]}
-  onUpdateFileOrder={[Function]}
   ready={false}
   render={[Function]}
   saveActionMsg="Save photos"

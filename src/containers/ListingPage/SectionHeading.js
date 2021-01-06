@@ -22,7 +22,7 @@ const SectionHeading = props => {
       <div className={css.heading}>
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.author}>
-          <p>{category}<br />{room}</p>
+          <p>{category}<br />{room}<br /><br /></p>
           <h2 className={css.featuresTitle}>
             <FormattedMessage id="ListingPage.venueAddress" />
           </h2>

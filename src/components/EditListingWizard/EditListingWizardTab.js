@@ -87,6 +87,7 @@ const EditListingWizardTab = props => {
     newListingPublished,
     history,
     images,
+    files,
     availability,
     listing,
     handleCreateFlowTabScrolling,
@@ -96,6 +97,8 @@ const EditListingWizardTab = props => {
     onImageUpload,
     onUpdateImageOrder,
     onRemoveImage,
+    onFileUpload,
+    onRemoveFile,
     onChange,
     updatedTab,
     updateInProgress,
@@ -289,14 +292,13 @@ const EditListingWizardTab = props => {
     //   return (
     //     <EditListingAttachmentsPanel
     //       {...panelProps(ATTACHMENTS)}
-    //       // submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-    //       // files={files}
-    //       // onFileUpload={onFileUpload}
-    //       // onRemoveFile={onRemoveFile}
-    //       // onSubmit={values => {
-    //       //   onCompleteEditListingWizardTab(tab, values);
-    //       // }}
-    //       // onUpdateFileOrder={onUpdateFileOrder}
+    //       submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+    //       files={files}
+    //       onFileUpload={onFileUpload}
+    //       onRemoveFile={onRemoveFile}
+    //       onSubmit={values => {
+    //         onCompleteEditListingWizardTab(tab, values);
+    //       }}
     //     />
     //   );
     // }
@@ -354,6 +356,8 @@ EditListingWizardTab.propTypes = {
   onImageUpload: func.isRequired,
   onUpdateImageOrder: func.isRequired,
   onRemoveImage: func.isRequired,
+  onFileUpload: func.isRequired,
+  onRemoveFile: func.isRequired,
   onChange: func.isRequired,
   updatedTab: string,
   updateInProgress: bool.isRequired,

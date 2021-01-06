@@ -178,6 +178,7 @@ export const ensureListing = listing => {
     type: 'listing',
     attributes: { publicData: {} },
     images: [],
+    files: []
   };
   return { ...empty, ...listing };
 };
@@ -193,6 +194,7 @@ export const ensureOwnListing = listing => {
     type: 'ownListing',
     attributes: { publicData: {} },
     images: [],
+    files: []
   };
   return { ...empty, ...listing };
 };

@@ -192,8 +192,8 @@ export class ListingPageComponent extends Component {
       location,
       scrollingDisabled,
       showListingError,
-      reviews,
-      fetchReviewsError,
+      // reviews,
+      // fetchReviewsError,
       sendEnquiryInProgress,
       sendEnquiryError,
       timeSlots,
@@ -387,7 +387,7 @@ export class ListingPageComponent extends Component {
     const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
     const capacityOptions = findOptionsForSelectFilter('capacity', filterConfig);
 
-    // console.log(publicData);
+    // console.log(filterConfig);
 
     const category =
       publicData && publicData.category ? (

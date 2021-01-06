@@ -140,9 +140,14 @@ export const UPLOAD_IMAGE_REQUEST = 'app/EditListingPage/UPLOAD_IMAGE_REQUEST';
 export const UPLOAD_IMAGE_SUCCESS = 'app/EditListingPage/UPLOAD_IMAGE_SUCCESS';
 export const UPLOAD_IMAGE_ERROR = 'app/EditListingPage/UPLOAD_IMAGE_ERROR';
 
+export const UPLOAD_FILE_REQUEST = 'app/EditListingPage/UPLOAD_FILE_REQUEST';
+export const UPLOAD_FILE_SUCCESS = 'app/EditListingPage/UPLOAD_FILE_SUCCESS';
+export const UPLOAD_FILE_ERROR = 'app/EditListingPage/UPLOAD_FILE_ERROR';
+
 export const UPDATE_IMAGE_ORDER = 'app/EditListingPage/UPDATE_IMAGE_ORDER';
 
 export const REMOVE_LISTING_IMAGE = 'app/EditListingPage/REMOVE_LISTING_IMAGE';
+export const REMOVE_LISTING_FILE = 'app/EditListingPage/REMOVE_LISTING_FILE';
 
 export const SAVE_PAYOUT_DETAILS_REQUEST = 'app/EditListingPage/SAVE_PAYOUT_DETAILS_REQUEST';
 export const SAVE_PAYOUT_DETAILS_SUCCESS = 'app/EditListingPage/SAVE_PAYOUT_DETAILS_SUCCESS';
@@ -172,6 +177,7 @@ const initialState = {
     // },
   },
   images: {},
+  files: {},
   imageOrder: [],
   removedImageIds: [],
   listingDraft: null,
@@ -227,6 +233,7 @@ export default function reducer(state = initialState, action = {}) {
         updateListingError: null,
         showListingsError: null,
         uploadImageError: null,
+        uploadFileError: null,
         createListingDraftInProgress: false,
         updateInProgress: false,
       };
@@ -352,6 +359,18 @@ export default function reducer(state = initialState, action = {}) {
         uploadImageError: null,
       };
     }
+    case UPLOAD_FILE_REQUEST: {
+      // payload.params: { id: 'tempId', file }
+      const files = {
+        ...state.files,
+        [payload.params.id]: { ...payload.params },
+      };
+      return {
+        ...state,
+        files,
+        uploadFileError: null,
+      };
+    }
     case UPLOAD_IMAGE_SUCCESS: {
       // payload.params: { id: 'tempId', imageId: 'some-real-id'}
       const { id, imageId } = payload;
@@ -359,12 +378,25 @@ export default function reducer(state = initialState, action = {}) {
       const images = { ...state.images, [id]: { id, imageId, file } };
       return { ...state, images };
     }
+    case UPLOAD_FILE_SUCCESS: {
+      // payload.params: { id: 'tempId', imageId: 'some-real-id'}
+      const { id, fileId } = payload;
+      const file = state.files[id].file;
+      const files = { ...state.files, [id]: { id, fileId, file } };
+      return { ...state, files };
+    }
     case UPLOAD_IMAGE_ERROR: {
       // eslint-disable-next-line no-console
       const { id, error } = payload;
       const imageOrder = state.imageOrder.filter(i => i !== id);
       const images = omit(state.images, id);
       return { ...state, imageOrder, images, uploadImageError: error };
+    }
+    case UPLOAD_FILE_ERROR: {
+      // eslint-disable-next-line no-console
+      const { id, error } = payload;
+      const files = omit(state.files, id);
+      return { ...state, files, uploadFileError: error };
     }
     case UPDATE_IMAGE_ORDER:
       return { ...state, imageOrder: payload.imageOrder };
@@ -384,6 +416,22 @@ export default function reducer(state = initialState, action = {}) {
       const imageOrder = state.imageOrder.filter(i => i !== id);
 
       return { ...state, images, imageOrder, removedImageIds };
+    }
+
+    case REMOVE_LISTING_FILE: {
+      const id = payload.fileId;
+
+      // Only mark the image removed if it hasn't been added to the
+      // listing already
+      const removedFileIds = state.files[id]
+        ? state.removedFileIds
+        : state.removedFileIds.concat(id);
+
+      // Always remove from the draft since it might be a new image to
+      // an existing listing.
+      const files = omit(state.files, id);
+
+      return { ...state, files, removedFileIds };
     }
 
     case SAVE_PAYOUT_DETAILS_REQUEST:
@@ -421,6 +469,12 @@ export const removeListingImage = imageId => ({
   payload: { imageId },
 });
 
+export const removeListingFile = imageId => ({
+  type: REMOVE_LISTING_FILE,
+  payload: { fileId },
+});
+
+
 // All the action creators that don't have the {Success, Error} suffix
 // take the params object that the corresponding SDK endpoint method
 // expects.
@@ -449,6 +503,11 @@ export const showListingsError = errorAction(SHOW_LISTINGS_ERROR);
 export const uploadImage = requestAction(UPLOAD_IMAGE_REQUEST);
 export const uploadImageSuccess = successAction(UPLOAD_IMAGE_SUCCESS);
 export const uploadImageError = errorAction(UPLOAD_IMAGE_ERROR);
+
+// SDK method: files.upload
+export const uploadFile = requestAction(UPLOAD_FILE_REQUEST);
+export const uploadFileSuccess = successAction(UPLOAD_FILE_SUCCESS);
+export const uploadFileError = errorAction(UPLOAD_FILE_ERROR);
 
 // SDK method: bookings.query
 export const fetchBookingsRequest = requestAction(FETCH_BOOKINGS_REQUEST);
@@ -546,6 +605,18 @@ export function requestImageUpload(actionPayload) {
       .upload({ image: actionPayload.file })
       .then(resp => dispatch(uploadImageSuccess({ data: { id, imageId: resp.data.data.id } })))
       .catch(e => dispatch(uploadImageError({ id, error: storableError(e) })));
+  };
+}
+
+// Images return imageId which we need to map with previously generated temporary id
+export function requestFileUpload(actionPayload) {
+  return (dispatch, getState, sdk) => {
+    const id = actionPayload.id;
+    dispatch(uploadFile(actionPayload));
+    return sdk.files
+      .upload({ file: actionPayload.file })
+      .then(resp => dispatch(uploadFileSuccess({ data: { id, fileId: resp.data.data.id } })))
+      .catch(e => dispatch(uploadFileError({ id, error: storableError(e) })));
   };
 }
 

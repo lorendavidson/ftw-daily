@@ -225,6 +225,7 @@
   "EditListingPhotosForm.savedImageAltText": "Saved listing image",
   "EditListingPhotosForm.showListingFailed": "Fetching listing data failed",
   "EditListingPhotosForm.updateFailed": "Failed to update listing. Please try again.",
+  "EditListingAttachmentsForm.fileTypes": "PDF files only. Max. 20 MB",
   "EditListingPhotosPanel.createListingTitle": "Add a few photos",
   "EditListingPhotosPanel.title": "Edit the photos of {listingTitle}",
   "EditListingPoliciesForm.rulesLabel": "Venue rules",

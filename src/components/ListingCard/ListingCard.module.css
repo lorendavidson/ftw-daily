@@ -43,9 +43,20 @@
 
 .info {
   /* Layout */
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   padding: 16px 0 2px 0;
+}
+
+.info p {
+  margin: 0;
+}
+
+.info p + p {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: #888;
+  margin-bottom: 1em;
 }
 
 .price {

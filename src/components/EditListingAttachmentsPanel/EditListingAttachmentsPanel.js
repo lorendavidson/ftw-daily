@@ -20,7 +20,6 @@ class EditListingAttachmentsPanel extends Component {
       files,
       listing,
       onFileUpload,
-      onUpdateFileOrder,
       submitButtonText,
       panelUpdated,
       updateInProgress,
@@ -47,7 +46,24 @@ class EditListingAttachmentsPanel extends Component {
     return (
       <div className={classes}>
         <h1 className={css.title}>{panelTitle}</h1>
-        <p>No attachments.</p>
+        <EditListingAttachmentsForm
+          className={css.form}
+          disabled={disabled}
+          ready={ready}
+          fetchErrors={errors}
+          initialValues={{ files }}
+          files={files}
+          onFileUpload={onFileUpload}
+          onSubmit={values => {
+            const { addFile, ...updateValues } = values;
+            onSubmit(updateValues);
+          }}
+          onChange={onChange}
+          onRemoveFile={onRemoveFile}
+          saveActionMsg={submitButtonText}
+          updated={panelUpdated}
+          updateInProgress={updateInProgress}
+        />
       </div>
     );
   }
@@ -73,7 +89,6 @@ EditListingAttachmentsPanel.propTypes = {
   listing: object,
 
   onFileUpload: func.isRequired,
-  onUpdateFileOrder: func.isRequired,
   onSubmit: func.isRequired,
   onChange: func.isRequired,
   submitButtonText: string.isRequired,
