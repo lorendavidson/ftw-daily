@@ -130,8 +130,7 @@ export const filters = [
       options: [
         { key: '1to10', label: '1 to 10' },
         { key: '10to20', label: '10 to 20' },
-        { key: '20to30', label: '20 to 30' },
-        { key: '30plus', label: '30+' },
+        { key: '20to30', label: '20 to 30' }
       ],
     },
   },
