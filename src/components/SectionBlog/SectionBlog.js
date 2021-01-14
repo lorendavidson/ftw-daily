@@ -4,14 +4,14 @@ import classNames from 'classnames';
 
 import css from './SectionBlog.module.css';
 
-var styles = document.createElement('link');
-styles.href = "https://www.twilik.com/assets/retainable/rss-embed/retainable.css";
-styles.rel = "stylesheet"
-document.getElementsByTagName('head')[0].appendChild(styles);
+// var styles = document.createElement('link');
+// styles.href = "https://www.twilik.com/assets/retainable/rss-embed/retainable.css";
+// styles.rel = "stylesheet"
+// document.getElementsByTagName('head')[0].appendChild(styles);
 
-var script = document.createElement('script');
-script.src = "https://www.twilik.com/assets/retainable/rss-embed/retainable.js";
-document.getElementsByTagName('body')[0].appendChild(script);
+// var script = document.createElement('script');
+// script.src = "https://www.twilik.com/assets/retainable/rss-embed/retainable.js";
+// document.getElementsByTagName('body')[0].appendChild(script);
 
 const SectionBlog = props => {
   const { rootClassName, className } = props;
