@@ -39,6 +39,7 @@ import {
   Button,
   Footer,
   BookingPanel,
+  ContactPanel
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 

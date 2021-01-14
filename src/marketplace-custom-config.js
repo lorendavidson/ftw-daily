@@ -85,8 +85,8 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'dining', label: 'Private dining room' },
-        { key: 'hotel', label: 'Hotel meeting Room' },
+        { key: 'dining', label: 'Private Dining Room' },
+        { key: 'hotel', label: 'Hotel Meeting Room' },
         { key: 'other', label: 'Other' },
       ],
     },

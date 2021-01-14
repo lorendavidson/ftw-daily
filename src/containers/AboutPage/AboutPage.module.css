@@ -1,7 +1,7 @@
 @import '../../styles/propertySets.css';
 
 .pageTitle {
-  text-align: center;
+  padding-left: 2rem;
 }
 
 .staticPageWrapper {
@@ -23,6 +23,26 @@
   margin: 32px 0 40px;
 }
 
+.bioImage {
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.contentMain {
+  @media (--viewportMedium) {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      padding: 0 2rem;
+    }
+
+    & > div:nth-child(1) { width: 100% }
+    & > div:nth-child(2) { width: 50% }
+    & > div:nth-child(3) { width: 50% }
+  }
+}
+
 .contentWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -32,6 +52,7 @@
   }
 }
 
+/*
 .contentSide {
   font-style: italic;
 
@@ -41,13 +62,17 @@
     margin-top: 8px;
   }
 }
-
 .contentMain {
   width: 90%;
 
   @media (--viewportMedium) {
     max-width: 650px;
   }
+}
+*/
+
+.contentMain {
+  width: 100%;
 }
 
 .subtitle {

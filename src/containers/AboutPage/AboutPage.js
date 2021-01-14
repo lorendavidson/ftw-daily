@@ -12,7 +12,9 @@ import {
 } from '../../components';
 
 import css from './AboutPage.module.css';
-import image from './about-us-1056.jpg';
+import image from './hero.jpg';
+import david from './david.jpg';
+import meltem from './meltem.jpg';
 
 const AboutPage = () => {
   const { siteTwitterHandle, siteFacebookPage } = config;
@@ -33,29 +35,35 @@ const AboutPage = () => {
         <LayoutWrapperTopbar>
           <TopbarContainer />
         </LayoutWrapperTopbar>
-
         <LayoutWrapperMain className={css.staticPageWrapper}>
           <h1 className={css.pageTitle}>About Welcomely</h1>
-          <img className={css.coverImage} src={image} alt="" />
-
           <div className={css.contentWrapper}>
-            <aside className={css.contentSide}>
-              <p>Aside content goes here, maybe.</p>
-            </aside>
-
             <div className={css.contentMain}>
-              <h2>Quisque vitae dapibus nunc, eu cursus ante. Duis eget erat non diam sodales venenatis non vel purus. Praesent sit amet erat tristique ante pellentesque elementum ac et mi. Vestibulum vel magna eget orci blandit rhoncus. Duis ac urna id metus accumsan hendrerit. Pellentesque posuere est in sapien laoreet, a mollis nunc pulvinar. Proin a sagittis elit. Morbi vehicula sit amet nisl vitae luctus. Nulla accumsan fringilla eleifend.</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eros eros, lobortis ac tincidunt a, iaculis at urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis velit in lorem rhoncus venenatis. Proin vel turpis eleifend, euismod leo eu, luctus massa. Nulla id dapibus ligula, ut auctor velit. Quisque gravida eu sem aliquam pretium. Morbi auctor, lacus quis sodales iaculis, sem mi maximus massa, at bibendum turpis risus vel magna. Maecenas sodales maximus velit. Suspendisse ac nisl tincidunt, porta purus eget, pharetra est. Phasellus id risus tristique, facilisis lectus ut, cursus nunc. Suspendisse leo lectus, finibus quis nisl ut, suscipit ullamcorper lacus. Nulla nec purus sed magna facilisis maximus.</p>
-              <h3 className={css.subtitle}>Are you a venue owner?</h3>
-              <p>
-                You can also check out our{' '}
-                <ExternalLink href={siteFacebookPage}>Facebook</ExternalLink> and{' '}
-                <ExternalLink href={siteTwitterPage}>Twitter</ExternalLink>.
-              </p>
+              <div>
+                <h2>Welcomely is an online marketplace for small, fully-equipped meeting spaces.</h2>
+                <p>The platform features top meeting spaces in hospitality’s finest locales. It goes beyond listing just hotels and restaurants, by including unique hidden gems that are often overlooked.</p>
+                <p>Welcomely is a one-stop shop for planners to browse small meeting spaces based on location, availability and need - with the convenience of booking and paying on demand.</p>
+                <h2>Founders</h2>
+              </div>
+              <div>
+                <img className={css.bioImage} src={meltem} alt="Meltem Algan" />
+                <h3>Hi, I'm Meltem.</h3>
+                <p>I'm a seasoned event planner with international experience in North America, Turkey and the Middle East.​</p>
+                <p>As a planner, finding the right meeting space has been a major pain point for me. Especially in a new city, which I happened to always be in. The amount of time spent on researching venues and contacting each one individually just to see what was available drove me nuts.</p>
+                <p>Now with a pandemic in the mix, more companies are permanently transitioning to a remote model. Meaning more people are sharing my pain. Finding the right space to hold a board meeting, host a workshop, pitch your deck, or impress a client is real.</p>
+                <p>So I created Welcomely - an online marketplace for small, fully-equipped meeting spaces.</p>
+              </div>
+              <div>
+                <img className={css.bioImage} src={david} alt="David Gratton" />
+                <h3>Hi, I'm David.</h3>
+                <p>I make ideas real.</p>
+                <p>I conceive new products, and I build and lead the teams to deliver them. A technology thought-leader and imagineer, my passion is incubating and growing unique, user-focused applications.</p>
+                <p>Innate curiosity has taken me around the world, creating products in a wide array of industries: investment banking and fintech, music and film, games, education, and real estate. Rapidly developing and deploying high quality products and apps to an increasingly tech savvy audience is a critical skill set needed to compete in today’s rapidly changing world. I grow these skills and inject design thinking into every project.</p>
+                <p>My mission is to bring ideas to life. The accomplishment of realizing goals, turning ideas into reality drives me and brings me joy every day.</p>
+              </div>
             </div>
           </div>
         </LayoutWrapperMain>
-
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>

@@ -63,14 +63,9 @@ export const ListingCardComponent = props => {
   const additional = 
   room && capacity && address && category && selectedOptions ? (
     <div>
-      <p>{room} ({category}: {capacity})</p>
+      <p>{room}</p>
+      <p>{capacity}</p>
       <p>{address}</p>
-      <PropertyGroup
-        id="ListingCard.amenities"
-        options={amenityOptions}
-        selectedOptions={selectedOptions}
-        twoColumns={false}
-      />
     </div>
   ) : null;
 
