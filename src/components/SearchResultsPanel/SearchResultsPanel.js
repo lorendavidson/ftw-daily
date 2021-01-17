@@ -9,6 +9,8 @@ const SearchResultsPanel = props => {
   const { className, rootClassName, listings, pagination, search, setActiveListing } = props;
   const classes = classNames(rootClassName || css.root, className);
 
+  // console.log(listings);
+
   const paginationLinks =
     pagination && pagination.totalPages > 1 ? (
       <PaginationLinks

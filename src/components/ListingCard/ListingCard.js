@@ -28,7 +28,10 @@ class ListingImage extends Component {
 const LazyImage = lazyLoadWithDimensions(ListingImage, { loadAfterInitialRendering: 3000 });
 
 export const ListingCardComponent = props => {
-  const { className, rootClassName, intl, filterConfig, listing, renderSizes, setActiveListing } = props;
+  const { className, rootClassName, filterConfig, listing, renderSizes, setActiveListing } = props;
+  
+  // console.log(listing);
+
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
   const id = currentListing.id.uuid;
@@ -37,12 +40,13 @@ export const ListingCardComponent = props => {
   const firstImage =
     currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
 
-  const amenityOptions = findOptionsForSelectFilter('amenities', filterConfig);
+  // const amenityOptions = findOptionsForSelectFilter('amenities', filterConfig);
   const categoryOptions = findOptionsForSelectFilter('category', filterConfig);
   const capacityOptions = findOptionsForSelectFilter('capacity', filterConfig);
 
   // console.log(filterConfig);
   // console.log(currentListing);
+  // console.log(capacityOptions);
 
   const category =
   publicData && publicData.category ? (
@@ -55,16 +59,19 @@ export const ListingCardComponent = props => {
   const capacity = publicData && publicData.capacity ? publicData.capacity : null;
   const address = publicData && publicData.location ? publicData.location.address : null;
 
-  const selectedOptions = publicData && publicData.amenities ? publicData.amenities : [];
-  const capacityOption = capacityOptions.find(
+  // const selectedOptions = publicData && publicData.amenities ? publicData.amenities : [];
+  const people = capacityOptions.find(
     option => option.key === capacity
   );
 
+  // const people = capacityOptions[capacity];
+  // console.log(people);
+
   const additional = 
-  room && capacity && address && category && selectedOptions ? (
+  room && people && address && category ? (
     <div>
       <p>{room}</p>
-      <p>{capacity}</p>
+      <p>{people.label} guests</p>
       <p>{address}</p>
     </div>
   ) : null;

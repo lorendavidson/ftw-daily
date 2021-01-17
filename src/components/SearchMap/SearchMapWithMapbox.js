@@ -9,7 +9,7 @@ import { parse } from '../../util/urlHelpers';
 import { propTypes } from '../../util/types';
 import { ensureListing } from '../../util/data';
 import { sdkBoundsToFixedCoordinates, hasSameSDKBounds } from '../../util/maps';
-import { SearchMapInfoCard, SearchMapPriceLabel, SearchMapGroupLabel } from '../../components';
+import { SearchMapInfoCard, SearchMapMarkerLabel, SearchMapGroupLabel } from '../../components';
 
 import { groupedByCoordinates, reducedToArray } from './SearchMap.helpers.js';
 import css from './SearchMapWithMapbox.module.css';
@@ -126,10 +126,10 @@ export const isMapsLibLoaded = () =>
   typeof window !== 'undefined' && window.mapboxgl && window.mapboxgl.accessToken;
 
 /**
- * Return price labels grouped by listing locations.
+ * Return the labels grouped by listing locations.
  * This is a helper function for SearchMapWithMapbox component.
  */
-const priceLabelsInLocations = (
+const markerLabelsInLocations = (
   listings,
   activeListingId,
   infoCardOpen,
@@ -137,12 +137,12 @@ const priceLabelsInLocations = (
   mapComponentRefreshToken
 ) => {
   const listingArraysInLocations = reducedToArray(groupedByCoordinates(listings));
-  const priceLabels = listingArraysInLocations.reverse().map(listingArr => {
+  const markerLabels = listingArraysInLocations.reverse().map(listingArr => {
     const isActive = activeListingId
       ? !!listingArr.find(l => activeListingId.uuid === l.id.uuid)
       : false;
 
-    // If location contains only one listing, print price label
+    // If location contains only one listing, print the label
     if (listingArr.length === 1) {
       const listing = listingArr[0];
       const infoCardOpenIds = Array.isArray(infoCardOpen)
@@ -151,7 +151,7 @@ const priceLabelsInLocations = (
         ? [infoCardOpen.id.uuid]
         : [];
 
-      // if the listing is open, don't print price label
+      // if the listing is open, don't print the label
       if (infoCardOpen != null && infoCardOpenIds.includes(listing.id.uuid)) {
         return null;
       }
@@ -161,9 +161,9 @@ const priceLabelsInLocations = (
 
       const key = listing.id.uuid;
       return {
-        markerId: `price_${key}`,
+        markerId: `marker_${key}`,
         location: geolocation,
-        type: 'price',
+        type: 'marker',
         componentProps: {
           key,
           isActive,
@@ -194,7 +194,7 @@ const priceLabelsInLocations = (
       },
     };
   });
-  return priceLabels;
+  return markerLabels;
 };
 
 /**
@@ -378,8 +378,8 @@ class SearchMapWithMapbox extends Component {
     } = this.props;
 
     if (this.map) {
-      // Create markers out of price labels and grouped labels
-      const labels = priceLabelsInLocations(
+      // Create markers out of the labels and grouped labels
+      const labels = markerLabelsInLocations(
         listings,
         activeListingId,
         infoCardOpen,
@@ -397,7 +397,7 @@ class SearchMapWithMapbox extends Component {
           .setLngLat([data.location.lng, data.location.lat])
           .addTo(this.map);
 
-      // SearchMapPriceLabel and SearchMapGroupLabel:
+      // SearchMapmarkerLabel and SearchMapGroupLabel:
       // create a new marker or use existing one if markerId is among previously rendered markers
       this.currentMarkers = labels
         .filter(v => v != null)
@@ -470,9 +470,9 @@ class SearchMapWithMapbox extends Component {
             : null;
 
           // Create component portals for correct marker containers
-          if (isMapReadyForMarkers && m.type === 'price') {
+          if (isMapReadyForMarkers && m.type === 'marker') {
             return ReactDOM.createPortal(
-              <SearchMapPriceLabel {...m.componentProps} />,
+              <SearchMapMarkerLabel {...m.componentProps} />,
               portalDOMContainer
             );
           } else if (isMapReadyForMarkers && m.type === 'group') {
@@ -497,7 +497,7 @@ class SearchMapWithMapbox extends Component {
 SearchMapWithMapbox.defaultProps = {
   id: 'map',
   center: null,
-  priceLabels: [],
+  markerLabels: [],
   infoCard: null,
   zoom: 11,
   reusableMapHiddenHandle: null,
@@ -509,7 +509,7 @@ SearchMapWithMapbox.propTypes = {
   location: shape({
     search: string.isRequired,
   }).isRequired,
-  priceLabels: arrayOf(node),
+  markerLabels: arrayOf(node),
   infoCard: node,
   onClick: func.isRequired,
   onMapMoveEnd: func.isRequired,
