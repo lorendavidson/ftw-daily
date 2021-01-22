@@ -77,8 +77,28 @@
   }
 }
 
+.navWrapper {
+  display: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  height: 100%;
+
+  @media (--viewportLarge) {
+    display: flex;
+  }
+}
+
+.navWrapper li {
+  padding: 0 1rem 0 0;
+}
+
+.navWrapper li .navLink {
+  display: block;
+}
+
 /* Create listing (CTA for providers) */
-.createListingLink {
+.createListingLink, .navLink {
   @apply --TopbarDesktop_linkHover;
   @apply --marketplaceH5FontStyles;
 
@@ -99,7 +119,7 @@
   }
 }
 
-.createListing {
+.createListing, .navItem {
   @apply --TopbarDesktop_label;
 }
 

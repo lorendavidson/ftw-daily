@@ -20,7 +20,7 @@ import {
   TopbarDesktop,
   TopbarMobileMenu,
 } from '../../components';
-import { TopbarSearchForm } from '../../forms';
+import { SearchForm } from '../../forms';
 
 import MenuIcon from './MenuIcon';
 import SearchIcon from './SearchIcon';
@@ -254,7 +254,7 @@ class TopbarComponent extends Component {
           onManageDisableScrolling={onManageDisableScrolling}
         >
           <div className={css.searchContainer}>
-            <TopbarSearchForm
+            <SearchForm
               onSubmit={this.handleSubmit}
               initialValues={initialSearchFormValues}
               isMobile

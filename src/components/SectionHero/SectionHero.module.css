@@ -96,3 +96,32 @@
     width: 260px;
   }
 }
+
+/* Search */
+.searchLink {
+  flex-grow: 1;
+  height: 100%;
+  margin-right: 24px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: var(--matterColorNegative);
+
+  @media (--viewportLarge) {
+    padding-left: 0;
+  }
+}
+
+.search {
+  @apply --marketplaceH4FontStyles;
+  @apply --TopbarDesktop_label;
+  color: var(--matterColor);
+}
+
+.heroSearchWithLeftPadding {
+  padding-left: 24px;
+  height: var(--topbarHeightDesktop);
+
+  @media (--viewportLarge) {
+    padding-left: 34px;
+  }
+}

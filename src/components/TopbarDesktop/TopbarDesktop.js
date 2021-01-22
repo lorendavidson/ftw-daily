@@ -14,7 +14,7 @@ import {
   MenuItem,
   NamedLink,
 } from '../../components';
-import { TopbarSearchForm } from '../../forms';
+import { SearchForm } from '../../forms';
 
 import css from './TopbarDesktop.module.css';
 
@@ -44,12 +44,20 @@ const TopbarDesktop = props => {
   const classes = classNames(rootClassName || css.root, className);
 
   const search = (
-    <TopbarSearchForm
+    <SearchForm
       className={css.searchLink}
       desktopInputRoot={css.topbarSearchWithLeftPadding}
       onSubmit={onSearchSubmit}
       initialValues={initialSearchFormValues}
     />
+  );
+
+  const nav = (
+    <ul className={css.navWrapper}>
+      <li><a className={css.navLink} href="/about"><span className={css.navItem}>About us</span></a></li>
+      <li><a className={css.navLink} href="https://medium.com/@meltem.algan" target="_blank"><span className={css.navItem}>Blog</span></a></li>
+      <li><a className={css.navLink} href="/faq"><span className={css.navItem}>FAQ</span></a></li>
+    </ul>
   );
 
   const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
@@ -141,6 +149,7 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
+      {nav}
       {search}
       <NamedLink className={css.createListingLink} name="NewListingPage">
         <span className={css.createListing}>

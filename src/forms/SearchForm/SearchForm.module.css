@@ -30,7 +30,7 @@
   /* Layout */
   margin: 0 24px 0 0;
   padding: 4px 13px 10px 13px;
-  height: var(--TopbarSearchForm_inputHeight);
+  height: var(--SearchForm_inputHeight);
   line-height: unset;
 
   /* Borders */
@@ -104,13 +104,13 @@
 
 .mobilePredictions {
   position: absolute;
-  top: calc(var(--TopbarSearchForm_inputHeight) - var(--TopbarSearchForm_bottomBorder));
+  top: calc(var(--SearchForm_inputHeight) - var(--SearchForm_bottomBorder));
   left: 0;
   min-height: calc(
     100vh -
       calc(
-        var(--TopbarSearchForm_topbarMargin) + var(--TopbarSearchForm_inputHeight) -
-          var(--TopbarSearchForm_bottomBorder)
+        var(--SearchForm_topbarMargin) + var(--SearchForm_inputHeight) -
+          var(--SearchForm_bottomBorder)
       )
   );
   width: 100%;
@@ -142,8 +142,8 @@
   z-index: calc(var(--zIndexPopup) + 1);
 
   margin-top: calc(
-    var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) +
-      var(--TopbarSearchForm_bottomBorder)
+    var(--topbarHeightDesktop) - var(--SearchForm_inputHeight) +
+      var(--SearchForm_bottomBorder)
   );
   max-width: 434px;
 }

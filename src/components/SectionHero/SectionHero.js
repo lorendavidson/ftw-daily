@@ -3,7 +3,7 @@ import { string, PropTypes } from 'prop-types';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 import { NamedLink } from '../../components';
-import { TopbarSearchForm } from '../../forms';
+import { SearchForm } from '../../forms';
 
 import css from './SectionHero.module.css';
 
@@ -18,10 +18,10 @@ const SectionHero = props => {
   const classes = classNames(rootClassName || css.root, className);
 
   // const search = (
-  //   <TopbarSearchForm
+  //   <SearchForm
   //     className={css.searchLink}
-  //     desktopInputRoot={css.topbarSearchWithLeftPadding}
-  //     onSubmit={onSearchSubmit}
+  //     desktopInputRoot={css.heroSearchWithLeftPadding}
+  //     onSubmit={handleSubmit}
   //     initialValues={initialSearchFormValues}
   //   />
   // );
@@ -35,7 +35,6 @@ const SectionHero = props => {
         <h2 className={css.heroSubTitle}>
           <FormattedMessage id="SectionHero.subTitle" />
         </h2>
-        
         <NamedLink
           name="SearchPage"
           to={{
@@ -53,7 +52,11 @@ const SectionHero = props => {
 
 const { func, object } = PropTypes;
 
-SectionHero.defaultProps = { rootClassName: null, className: null };
+SectionHero.defaultProps = {
+  rootClassName: null,
+  className: null,
+  initialSearchFormValues: {},
+};
 
 SectionHero.propTypes = {
   rootClassName: string,
