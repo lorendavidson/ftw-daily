@@ -14,7 +14,6 @@ import {
   MenuItem,
   NamedLink,
 } from '../../components';
-import { SearchForm } from '../../forms';
 
 import css from './TopbarDesktop.module.css';
 
@@ -29,8 +28,6 @@ const TopbarDesktop = props => {
     intl,
     isAuthenticated,
     onLogout,
-    onSearchSubmit,
-    initialSearchFormValues,
   } = props;
   const [mounted, setMounted] = useState(false);
 
@@ -42,15 +39,6 @@ const TopbarDesktop = props => {
   const isAuthenticatedOrJustHydrated = isAuthenticated || !mounted;
 
   const classes = classNames(rootClassName || css.root, className);
-
-  const search = (
-    <SearchForm
-      className={css.searchLink}
-      desktopInputRoot={css.topbarSearchWithLeftPadding}
-      onSubmit={onSearchSubmit}
-      initialValues={initialSearchFormValues}
-    />
-  );
 
   const nav = (
     <ul className={css.navWrapper}>
@@ -150,7 +138,6 @@ const TopbarDesktop = props => {
         />
       </NamedLink>
       {nav}
-      {search}
       <NamedLink className={css.createListingLink} name="NewListingPage">
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
@@ -172,7 +159,6 @@ TopbarDesktop.defaultProps = {
   currentUser: null,
   currentPage: null,
   notificationCount: 0,
-  initialSearchFormValues: {},
 };
 
 TopbarDesktop.propTypes = {
@@ -184,8 +170,6 @@ TopbarDesktop.propTypes = {
   isAuthenticated: bool.isRequired,
   onLogout: func.isRequired,
   notificationCount: number,
-  onSearchSubmit: func.isRequired,
-  initialSearchFormValues: object,
   intl: intlShape.isRequired,
 };
 

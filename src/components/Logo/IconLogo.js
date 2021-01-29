@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LogoImage from './Welcomely-logo.png';
+import LogoImage from './welcomely-logo.png';
 
 const IconLogo = props => {
   const { className, ...rest } = props;

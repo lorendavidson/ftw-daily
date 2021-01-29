@@ -97,31 +97,15 @@
   }
 }
 
-/* Search */
-.searchLink {
-  flex-grow: 1;
-  height: 100%;
-  margin-right: 24px;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-left-color: var(--matterColorNegative);
+.searchForm {
+  max-width: 408px;
+  margin: 1rem 0 0;
 
-  @media (--viewportLarge) {
-    padding-left: 0;
-  }
-}
+  background-color: var(--matterColorLight);
+  border-bottom: 4px solid var(--marketplaceColor);
+  box-shadow: var(--boxShadowNotFoundPageSearch);
 
-.search {
-  @apply --marketplaceH4FontStyles;
-  @apply --TopbarDesktop_label;
-  color: var(--matterColor);
-}
-
-.heroSearchWithLeftPadding {
-  padding-left: 24px;
-  height: var(--topbarHeightDesktop);
-
-  @media (--viewportLarge) {
-    padding-left: 34px;
+  @media (--viewportMedium) {
+    margin-top: 64px;
   }
 }

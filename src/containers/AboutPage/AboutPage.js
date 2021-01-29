@@ -12,7 +12,7 @@ import {
 } from '../../components';
 
 import css from './AboutPage.module.css';
-import image from './hero.jpg';
+import logo from './logo.png';
 import david from './david.jpg';
 import meltem from './meltem.jpg';
 
@@ -36,7 +36,7 @@ const AboutPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h1 className={css.pageTitle}>About Welcomely</h1>
+          <img className={css.logoImage} src={logo} alt="Welcomely" />
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
               <div>

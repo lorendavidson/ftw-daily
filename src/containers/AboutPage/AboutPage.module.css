@@ -28,6 +28,12 @@
   margin: 0 0 1rem 0;
 }
 
+.logoImage {
+  width: 50%;
+  margin: 1rem auto 2rem;
+  max-width: 15rem;
+}
+
 .contentMain {
   @media (--viewportMedium) {
     display: flex;

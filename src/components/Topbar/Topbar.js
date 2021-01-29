@@ -228,12 +228,10 @@ class TopbarComponent extends Component {
             currentUserHasListings={currentUserHasListings}
             currentUser={currentUser}
             currentPage={currentPage}
-            initialSearchFormValues={initialSearchFormValues}
             intl={intl}
             isAuthenticated={isAuthenticated}
             notificationCount={notificationCount}
             onLogout={this.handleLogout}
-            onSearchSubmit={this.handleSubmit}
           />
         </div>
         <Modal
