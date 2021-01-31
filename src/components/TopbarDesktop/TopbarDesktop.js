@@ -42,9 +42,10 @@ const TopbarDesktop = props => {
 
   const nav = (
     <ul className={css.navWrapper}>
-      <li><a className={css.navLink} href="/about"><span className={css.navItem}>About us</span></a></li>
+      <li><a className={css.navLink} href="/about"><span className={css.navItem}>About Us</span></a></li>
       <li><a className={css.navLink} href="https://medium.com/@meltem.algan" target="_blank"><span className={css.navItem}>Blog</span></a></li>
       <li><a className={css.navLink} href="/faq"><span className={css.navItem}>FAQ</span></a></li>
+      <li><a className={css.navLink} href="/contact"><span className={css.navItem}>Contact</span></a></li>
     </ul>
   );
 

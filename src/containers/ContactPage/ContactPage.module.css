@@ -1,0 +1,69 @@
+@import '../../styles/propertySets.css';
+
+.pageTitle {
+  padding-left: 2rem;
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 24px auto;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 72px auto;
+  }
+}
+
+.coverImage {
+  width: 100%;
+  height: 528px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin: 32px 0 40px;
+}
+
+.bioImage {
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.logoImage {
+  width: 50%;
+  margin: 1rem auto 2rem;
+  max-width: 15rem;
+}
+
+.contentMain {
+  @media (--viewportMedium) {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      padding: 0 2rem;
+    }
+
+    & > div:nth-child(1) { width: 100% }
+    & > div:nth-child(2) { width: 50% }
+    & > div:nth-child(3) { width: 50% }
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  }
+}
+
+.contentMain {
+  width: 100%;
+}
+
+.subtitle {
+  @apply --marketplaceH3FontStyles;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}

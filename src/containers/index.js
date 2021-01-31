@@ -1,4 +1,5 @@
 export { default as AboutPage } from './AboutPage/AboutPage';
+export { default as ContactPage } from './ContactPage/ContactPage';
 export { default as AuthenticationPage } from './AuthenticationPage/AuthenticationPage';
 export { default as CheckoutPage } from './CheckoutPage/CheckoutPage';
 export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetailsPage';
