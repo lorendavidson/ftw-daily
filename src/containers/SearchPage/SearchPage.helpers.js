@@ -132,6 +132,11 @@ export const createSearchResultSchema = (listings, address, intl) => {
 
   const schemaListings = listings.map((l, i) => {
     const title = l.attributes.title;
+    const capacity = l.attributes.capacity;
+    const room = l.attributes.room;
+
+    // console.log(l);
+
     const pathToItem = createResourceLocatorString('ListingPage', routeConfiguration(), {
       id: l.id.uuid,
       slug: createSlug(title),
@@ -141,6 +146,8 @@ export const createSearchResultSchema = (listings, address, intl) => {
       position: i,
       url: `${config.canonicalRootURL}${pathToItem}`,
       name: title,
+      room: room,
+      capacity: capacity,
     };
   });
 

@@ -14,6 +14,7 @@ import {
   MenuItem,
   NamedLink,
 } from '../../components';
+import { SearchForm } from '../../forms';
 
 import css from './TopbarDesktop.module.css';
 
@@ -28,6 +29,8 @@ const TopbarDesktop = props => {
     intl,
     isAuthenticated,
     onLogout,
+    onSearchSubmit,
+    initialSearchFormValues,
   } = props;
   const [mounted, setMounted] = useState(false);
 
@@ -39,6 +42,15 @@ const TopbarDesktop = props => {
   const isAuthenticatedOrJustHydrated = isAuthenticated || !mounted;
 
   const classes = classNames(rootClassName || css.root, className);
+
+  const search = (
+    <SearchForm
+      className={css.searchLink}
+      desktopInputRoot={css.topbarSearchWithLeftPadding}
+      onSubmit={onSearchSubmit}
+      initialValues={initialSearchFormValues}
+    />
+  );
 
   const nav = (
     <ul className={css.navWrapper}>
@@ -113,14 +125,6 @@ const TopbarDesktop = props => {
     </Menu>
   ) : null;
 
-  const signupLink = isAuthenticatedOrJustHydrated ? null : (
-    <NamedLink name="SignupPage" className={css.signupLink}>
-      <span className={css.signup}>
-        <FormattedMessage id="TopbarDesktop.signup" />
-      </span>
-    </NamedLink>
-  );
-
   const loginLink = isAuthenticatedOrJustHydrated ? null : (
     <NamedLink name="LoginPage" className={css.loginLink}>
       <span className={css.login}>
@@ -138,15 +142,9 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
+      {search}
       {nav}
-      <NamedLink className={css.createListingLink} name="NewListingPage">
-        <span className={css.createListing}>
-          <FormattedMessage id="TopbarDesktop.createListing" />
-        </span>
-      </NamedLink>
-      {inboxLink}
       {profileMenu}
-      {signupLink}
       {loginLink}
     </nav>
   );
@@ -160,6 +158,7 @@ TopbarDesktop.defaultProps = {
   currentUser: null,
   currentPage: null,
   notificationCount: 0,
+  initialSearchFormValues: {},
 };
 
 TopbarDesktop.propTypes = {
@@ -172,6 +171,8 @@ TopbarDesktop.propTypes = {
   onLogout: func.isRequired,
   notificationCount: number,
   intl: intlShape.isRequired,
+  onSearchSubmit: func.isRequired,
+  initialSearchFormValues: object,
 };
 
 export default TopbarDesktop;

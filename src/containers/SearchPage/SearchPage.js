@@ -153,6 +153,8 @@ export class SearchPageComponent extends Component {
     const { address, bounds, origin } = searchInURL || {};
     const { title, description, schema } = createSearchResultSchema(listings, address, intl);
 
+    // console.log(listings);
+
     // Set topbar class based on if a modal is open in
     // a child component
     const topbarClasses = this.state.isMobileModalOpen
@@ -325,7 +327,7 @@ SearchPage.loadData = (params, search) => {
     page,
     perPage: RESULT_PAGE_SIZE,
     include: ['author', 'images'],
-    'fields.listing': ['title', 'geolocation', 'price'],
+    'fields.listing': ['title', 'geolocation', 'room', 'capacity'],
     'fields.user': ['profile.displayName', 'profile.abbreviatedName'],
     'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
     'limit.images': 1,
