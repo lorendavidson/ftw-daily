@@ -229,15 +229,17 @@
 }
 
 .loginLink {
-  @apply --TopbarDesktop_linkHover;
+  @apply --TopbarDesktop_revLinkHover;
   flex-shrink: 0;
   height: 100%;
   padding: 0 12px 0 12px;
-
-  color: var(--matterColor);
+  color: white;
+  transition: none;
 
   &:hover {
+    background: white;
     color: var(--matterColorDark);
+    border-color: var(--marketplaceColor);
   }
 }
 

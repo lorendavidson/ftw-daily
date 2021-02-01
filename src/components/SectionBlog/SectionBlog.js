@@ -4,14 +4,9 @@ import classNames from 'classnames';
 
 import css from './SectionBlog.module.css';
 
-// var styles = document.createElement('link');
-// styles.href = "https://www.twilik.com/assets/retainable/rss-embed/retainable.css";
-// styles.rel = "stylesheet"
-// document.getElementsByTagName('head')[0].appendChild(styles);
-
-// var script = document.createElement('script');
-// script.src = "https://www.twilik.com/assets/retainable/rss-embed/retainable.js";
-// document.getElementsByTagName('body')[0].appendChild(script);
+var script = document.createElement('script');
+script.src = "https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js";
+document.getElementsByTagName('body')[0].appendChild(script);
 
 const SectionBlog = props => {
   const { rootClassName, className } = props;
@@ -19,14 +14,16 @@ const SectionBlog = props => {
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
+      <h3 className={css.title}>Blog</h3>
       <div id="retainable-rss-embed" 
-      data-rss="https://medium.com/@meltem.algan"
-      data-maxcols="3" 
-      data-layout="grid" 
-      data-poststyle="inline" 
-      data-readmore="Read the rest" 
-      data-buttonclass="btn btn-primary" 
-      data-offset="-100"></div>
+        data-rss="https://medium.com/feed/@meltem.algan"
+        data-maxcols="3" 
+        data-layout="grid" 
+        data-poststyle="inline" 
+        data-readmore="Read the rest" 
+        data-buttonclass="btn btn-primary" 
+        data-offset="-100">
+      </div>
     </div>
   );
 };

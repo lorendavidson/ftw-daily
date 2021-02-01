@@ -20,7 +20,7 @@ const ContactPage = () => {
   // prettier-ignore
   return (
     <StaticPage
-      title="About Us"
+      title="Contact"
       schema={{
         '@context': 'http://schema.org',
         '@type': 'ContactPage',

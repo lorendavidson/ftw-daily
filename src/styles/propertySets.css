@@ -133,9 +133,21 @@
     }
   }
 
+  --TopbarDesktop_revLinkHover: {
+    border-bottom: 0px solid;
+    transition: var(--transitionStyleButton);
+    background: var(--marketplaceColor);
+
+    &:hover {
+      border-bottom: 4px solid white;
+      border-radius: 0;
+      text-decoration: none;
+    }
+  }
+
   /* ================ Modal title ================ */
 
-  --marketplaceModalTitleStyles {
+  --marketplaceModalTitleStyles: {
     font-weight: var(--fontWeightSemiBold);
     font-size: 30px;
     line-height: 36px;

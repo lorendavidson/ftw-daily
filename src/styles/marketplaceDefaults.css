@@ -293,3 +293,12 @@ textarea {
     font-family: 'poppins', Helvetica, Arial, sans-serif;
   }
 }
+
+.excerpt p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.excerpt p:not(:first-of-type), .excerpt h3, .excerpt figure, .excerpt blockquote {
+  display: none;
+}
