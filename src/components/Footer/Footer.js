@@ -50,6 +50,7 @@ const renderSocialMediaLinks = intl => {
       <IconSocialMediaInstagram />
     </ExternalLink>
   ) : null;
+
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
@@ -58,20 +59,43 @@ const Footer = props => {
   const socialMediaLinks = renderSocialMediaLinks(intl);
   const classes = classNames(rootClassName || css.root, className);
 
+  const mailchimp = (
+    <div id="mc_embed_signup">
+      <form action="https://gmail.us7.list-manage.com/subscribe/post?u=04735be42412f52218435a6e6&amp;id=77fc418088" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+        <div id="mc_embed_signup_scroll">
+          <div className={css.mcFieldGroup}>
+            <div className={css.mcFieldItem}>
+              <label htmlFor="mce-EMAIL">Subscribe to our newsletter!</label>
+              <input type="email" placeholder="Email address" defaultValue="" name="EMAIL" className="required email" id="mce-EMAIL" />
+            </div>
+            <input type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" />
+          </div>
+          <div id="mce-responses" className="clear">
+            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
+            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
+          </div>
+          <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true">
+            <input type="text" name="b_04735be42412f52218435a6e6_77fc418088" tabIndex="-1" defaultValue="" />
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+
   return (
     <div className={classes}>
       <div className={css.topBorderWrapper}>
         <div className={css.content}>
-          <div className={css.someLiksMobile}>{socialMediaLinks}</div>
+          <div className={css.someLinksMobile}>{socialMediaLinks}</div>
           <div className={css.links}>
             <div className={css.organization} id="organization">
+              <div className={css.mailChimpWrapper}>
+                {mailchimp}
+              </div>
               <NamedLink name="LandingPage" className={css.logoLink}>
                 <Logo format="desktop" className={css.logo} />
               </NamedLink>
               <div className={css.organizationInfo}>
-                <p className={css.organizationDescription}>
-                  <FormattedMessage id="Footer.organizationDescription" />
-                </p>
                 <p className={css.organizationCopyright}>
                   <NamedLink name="LandingPage" className={css.copyrightLink}>
                     <FormattedMessage id="Footer.copyright" />
