@@ -8,10 +8,10 @@ const SectionBlog = props => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);
 
-  const script = document.createElement('script');
-  script.src = 'https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js';
-  script.id = 'medium-embed';
-  document.body.appendChild(script);
+  // const script = document.createElement('script');
+  // script.src = 'https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js';
+  // script.id = 'medium-embed';
+  // document.body.appendChild(script);
 
   return (
     <div className={classes}>
