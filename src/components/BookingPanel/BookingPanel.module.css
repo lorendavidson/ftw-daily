@@ -24,6 +24,10 @@
   }
 }
 
+.contactLink {
+  display: none;
+}
+
 .modalHeading {
   margin-top: 89px;
   margin-bottom: 36px;

@@ -10,7 +10,7 @@ import { formatMoney } from '../../util/currency';
 import { parse, stringify } from '../../util/urlHelpers';
 import config from '../../config';
 import { ModalInMobile, InlineTextButton, Button } from '../../components';
-import { BookingDatesForm } from '../../forms';
+import { BookingDatesForm, SendMessageForm } from '../../forms';
 
 import css from './BookingPanel.module.css';
 
@@ -147,6 +147,16 @@ const BookingPanel = props => {
             <Button rootClassName={css.contactLink} onClick={onContactUser}>
               <FormattedMessage id="ListingPage.contactUser" />
             </Button>
+            <SendMessageForm
+              formId=""
+              rootClassName={css.sendMessageForm}
+              messagePlaceholder="Write your message here..."
+              inProgress={false}
+              sendMessageError={false}
+              onFocus={() => null}
+              onBlur={() => null}
+              onSubmit={() => null}
+            />
           </span>
         ) : null}
 

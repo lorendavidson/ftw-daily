@@ -784,6 +784,7 @@
   "SectionHowItWorks.titleLineTwo": "(or how Welcomely works).",
   "SectionLocations.listingsInLocation": "Venues in {location}",
   "SectionLocations.title": "Explore Locations In Vancouver",
+  "SectionRooms.title": "Explore Small Meeting Spaces",
   "SelectMultipleFilter.labelSelected": "{labelText} • {count}",
   "SelectMultipleFilterPlainForm.labelSelected": "{labelText} • {count}",
   "SelectSingleFilter.popupClear": "Clear",

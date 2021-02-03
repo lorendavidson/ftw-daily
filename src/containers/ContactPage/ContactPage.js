@@ -10,6 +10,8 @@ import {
   Footer,
 } from '../../components';
 
+import { SendMessageForm } from '../../forms';
+
 import css from './ContactPage.module.css';
 import logo from './logo.png';
 
@@ -33,10 +35,19 @@ const ContactPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <img className={css.logoImage} src={logo} alt="Welcomely" />
+          <h1 className={css.pageTitle}>Contact Welcomely</h1>
           <div className={css.contentWrapper}>
             <div className={css.contentMain}>
-              
+              <SendMessageForm
+                formId=""
+                rootClassName={css.sendMessageForm}
+                messagePlaceholder="Write your message here..."
+                inProgress={false}
+                sendMessageError={false}
+                onFocus={() => null}
+                onBlur={() => null}
+                onSubmit={() => null}
+              />
             </div>
           </div>
         </LayoutWrapperMain>

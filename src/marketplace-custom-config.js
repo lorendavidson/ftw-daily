@@ -87,6 +87,7 @@ export const filters = [
       options: [
         { key: 'dining', label: 'Private Dining Room' },
         { key: 'hotel', label: 'Hotel Meeting Room' },
+        { key: 'unique', label: 'Unique Meeting Spaces' },
         { key: 'other', label: 'Other' },
       ],
     },

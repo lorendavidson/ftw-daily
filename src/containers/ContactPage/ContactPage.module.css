@@ -1,8 +1,8 @@
 @import '../../styles/propertySets.css';
 
-.pageTitle {
+/* .pageTitle {
   padding-left: 2rem;
-}
+} */
 
 .staticPageWrapper {
   width: calc(100% - 48px);
@@ -28,16 +28,16 @@
   margin: 0 0 1rem 0;
 }
 
-.logoImage {
+/* .logoImage {
   width: 50%;
   margin: 1rem auto 2rem;
   max-width: 15rem;
-}
+} */
 
 .contentMain {
   @media (--viewportMedium) {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
 
     & > div {
       padding: 0 2rem;
@@ -46,6 +46,35 @@
     & > div:nth-child(1) { width: 100% }
     & > div:nth-child(2) { width: 50% }
     & > div:nth-child(3) { width: 50% }
+  }
+}
+
+/* Prop to be passed to SendMessageForm component */
+.sendMessageForm {
+  position: relative;
+  margin: 46px 24px 0 24px;
+
+  @media (--viewportMedium) {
+    margin: 49px 24px 0 24px;
+    border-top: 0;
+  }
+  @media (--viewportLarge) {
+    margin: 47px 0 0 0;
+  }
+}
+
+.sendingMessageNotAllowed {
+  color: var(--matterColorAnti);
+
+  position: relative;
+  margin: 46px 24px 0 24px;
+
+  @media (--viewportMedium) {
+    margin: 49px 24px 0 24px;
+    border-top: 0;
+  }
+  @media (--viewportLarge) {
+    margin: 47px 0 0 0;
   }
 }
 

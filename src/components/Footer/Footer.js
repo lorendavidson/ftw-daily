@@ -68,7 +68,7 @@ const Footer = props => {
               <label htmlFor="mce-EMAIL">Subscribe to our newsletter!</label>
               <input type="email" placeholder="Email address" defaultValue="" name="EMAIL" className="required email" id="mce-EMAIL" />
             </div>
-            <input type="submit" defaultValue="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" />
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" />
           </div>
           <div id="mce-responses" className="clear">
             <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
@@ -105,11 +105,6 @@ const Footer = props => {
             </div>
             <div className={css.infoLinks}>
               <ul className={css.list}>
-                <li className={css.listItem}>
-                  <NamedLink name="NewListingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toNewListingPage" />
-                  </NamedLink>
-                </li>
                 <li className={css.listItem}>
                   <NamedLink name="AboutPage" className={css.link}>
                     <FormattedMessage id="Footer.toAboutPage" />
