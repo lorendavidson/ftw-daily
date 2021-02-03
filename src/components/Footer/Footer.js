@@ -61,7 +61,7 @@ const Footer = props => {
 
   const mailchimp = (
     <div id="mc_embed_signup">
-      <form action="https://gmail.us7.list-manage.com/subscribe/post?u=04735be42412f52218435a6e6&amp;id=77fc418088" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+      <form action="https://gmail.us7.list-manage.com/subscribe/post?u=299990f2f1972f38b92a7a3ae&amp;id=2d98b5e949" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
         <div id="mc_embed_signup_scroll">
           <div className={css.mcFieldGroup}>
             <div className={css.mcFieldItem}>

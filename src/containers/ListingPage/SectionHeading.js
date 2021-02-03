@@ -18,18 +18,20 @@ const SectionHeading = props => {
   const isDaily = unitType === LINE_ITEM_DAY;
 
   return (
+    <>
     <div className={css.sectionHeading}>
       <div className={css.heading}>
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.author}>
-          <p>{category}<br />{room}<br /><br /></p>
-          <h2 className={css.featuresTitle}>
-            <FormattedMessage id="ListingPage.venueAddress" />
-          </h2>
-          <p>{address}</p>
+          <p>{category}<br />{room}</p>
         </div>
       </div>
     </div>
+    <h2 className={css.featuresTitle}>
+      <FormattedMessage id="ListingPage.venueAddress" />
+    </h2>
+    <p>{address}</p>
+    </>
   );
 };
 

@@ -42,7 +42,7 @@
 .aspectWrapper {
   position: relative; /* allow positioning own listing action bar */
   padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
-  background-color: var(--matterColorNegative); /* Loading BG color */
+  background-color: #333; /* Loading BG color */
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
   cursor: pointer;
@@ -137,7 +137,7 @@
     right: auto;
     height: calc(0.41 * 100vw);
     max-height: 50vh;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: var(--borderRadius);
 
     &:hover {
@@ -286,6 +286,9 @@
 .sectionHeading {
   margin-top: 22px;
   margin-bottom: 34px;
+  background: #eaeaea;
+  border: 1px solid #ccc;
+  padding: 1rem;
 
   @media (--viewportMedium) {
     display: flex;
