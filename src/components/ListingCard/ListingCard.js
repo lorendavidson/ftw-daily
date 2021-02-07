@@ -9,7 +9,8 @@ import { ensureListing, ensureUser } from '../../util/data';
 import { richText } from '../../util/richText';
 import { createSlug } from '../../util/urlHelpers';
 import config from '../../config';
-import { NamedLink, ResponsiveImage, PropertyGroup } from '../../components';
+import { NamedLink, ResponsiveImage } from '../../components';
+// import { loadData } from '../../containers/ListingPage/ListingPage.duck';
 
 import css from './ListingCard.module.css';
 
@@ -28,7 +29,7 @@ class ListingImage extends Component {
 const LazyImage = lazyLoadWithDimensions(ListingImage, { loadAfterInitialRendering: 3000 });
 
 export const ListingCardComponent = props => {
-  const { className, rootClassName, filterConfig, listing, renderSizes, setActiveListing } = props;
+  const { className, rootClassName, filterConfig, getListing, listing, renderSizes, setActiveListing } = props;
   
   // console.log(listing);
 
@@ -115,12 +116,14 @@ ListingCardComponent.defaultProps = {
   rootClassName: null,
   renderSizes: null,
   filterConfig: config.custom.filters,
+  
   setActiveListing: () => null,
 };
 
 ListingCardComponent.propTypes = {
   className: string,
   rootClassName: string,
+  // getListing: func.isRequired,
   intl: intlShape.isRequired,
   listing: propTypes.listing.isRequired,
 

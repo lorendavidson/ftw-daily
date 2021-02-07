@@ -2,6 +2,7 @@
   width: 3rem;
   height: auto;
   display: block;
+  flex: 0;
 
   & path {
     fill: var(--marketplaceColor);

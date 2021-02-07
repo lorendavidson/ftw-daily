@@ -123,25 +123,6 @@ const BookingPanel = props => {
           </div>
         ) : null}
 
-        {showBookingDatesForm ? (
-          <BookingDatesForm
-            className={css.bookingForm}
-            formId="BookingPanel"
-            submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
-            unitType={unitType}
-            onSubmit={onSubmit}
-            price={price}
-            listingId={listing.id}
-            isOwnListing={isOwnListing}
-            timeSlots={timeSlots}
-            fetchTimeSlotsError={fetchTimeSlotsError}
-            onFetchTransactionLineItems={onFetchTransactionLineItems}
-            lineItems={lineItems}
-            fetchLineItemsInProgress={fetchLineItemsInProgress}
-            fetchLineItemsError={fetchLineItemsError}
-          />
-        ) : null}
-
         {showContactUser ? (
           <span className={css.contactWrapper}>
             <Button rootClassName={css.contactLink} onClick={onContactUser}>
@@ -161,38 +142,6 @@ const BookingPanel = props => {
         ) : null}
 
       </ModalInMobile>
-      <div className={css.openBookingForm}>
-        <div className={css.priceContainer}>
-          <div className={css.priceValue} title={priceTitle}>
-            {formattedPrice}
-          </div>
-          <div className={css.perUnit}>
-            <FormattedMessage id={unitTranslationKey} />
-          </div>
-        </div>
-
-        {showBookingDatesForm ? (
-          <Button
-            rootClassName={css.bookButton}
-            onClick={() => openBookModal(isOwnListing, isClosed, history, location)}
-          >
-            <FormattedMessage id="BookingPanel.ctaButtonMessage" />
-          </Button>
-        ) : isClosed ? (
-          <div className={css.closedListingButton}>
-            <FormattedMessage id="BookingPanel.closedListingButtonText" />
-          </div>
-        ) : null}
-
-        {showContactUser ? (
-          <span className={css.contactWrapper}>
-            <span className={css.separator}>•</span>
-            <InlineTextButton rootClassName={css.contactLink} onClick={onContactUser}>
-              <FormattedMessage id="ListingPage.contactUser" />
-            </InlineTextButton>
-          </span>
-        ) : null}
-      </div>
     </div>
   );
 };

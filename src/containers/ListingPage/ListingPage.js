@@ -50,7 +50,6 @@ import {
   fetchTransactionLineItems,
 } from './ListingPage.duck';
 import SectionImages from './SectionImages';
-// import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
 import SectionCapacity from './SectionCapacity';
 import SectionDescriptionMaybe from './SectionDescriptionMaybe';

@@ -12,10 +12,6 @@ import loc_a_image from './images/location_a.jpg';
 import loc_b_image from './images/location_b.jpg';
 import loc_c_image from './images/location_c.jpg';
 
-// import room_a_image from './images/room_a.jpg';
-// import room_b_image from './images/room_b.jpg';
-// import room_c_image from './images/room_c.jpg';
-
 class LocationImage extends Component {
   render() {
     const { alt, ...rest } = this.props;
