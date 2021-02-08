@@ -47,12 +47,16 @@ const EditListingCapacityPanel = props => {
       <h1 className={css.title}>{panelTitle}</h1>
       <EditListingCapacityForm
         className={css.form}
-        initialValues={{ capacity: publicData.capacity }}
+        initialValues={{
+          capacity: publicData.capacity,
+          maximum: publicData.maximum
+        }}
         onSubmit={values => {
-          const { capacity } = values;
+          const { capacity, maximum } = values;
           const updateValues = {
             publicData: {
               capacity,
+              maximum,
             },
           };
           onSubmit(updateValues);

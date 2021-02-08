@@ -30,10 +30,10 @@
   }
 }
 
-.home {
+/* .home {
   display: flex;
   padding: calc((var(--topbarHeight) - var(--Topbar_logoHeight)) / 2) 24px;
-}
+} */
 
 .logoutButton {
   margin: 0;

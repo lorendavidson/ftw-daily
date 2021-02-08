@@ -20,8 +20,9 @@
   margin: 24px;
 }
 
-.sectionImages {
-}
+/* .sectionImages * {
+  background: none !important;
+} */
 
 .threeToTwoWrapper {
   /* Layout */
@@ -110,24 +111,29 @@
   padding-bottom: 50%;
   background-color: var(--marketplaceColorDarker); /* Loading BG color */
   overflow: hidden;
+  width: 100%;
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
   cursor: pointer;
 }
 
-.rootForImage {
+.rootForImage, .sectionImages img {
   transition: var(--transitionStyleCover);
   position: absolute;
   top: 50%;
   left: 50%;
   min-height: 100%;
   height: auto;
-  display: block;
   width: 100%;
+  min-width: 100vw;
   border-radius: var(--borderRadius);
-  object-fit: none;
+  object-fit: fill;
   transform: translate(-50%, -50%);
   transform-origin: 50% 50%;
+  
+  @media (--viewportLarge) {
+    min-width: calc(100vw - 72px);
+  }
 
   &:hover {
     transform: scale(1.025) translate(-49%, -49%);
@@ -348,6 +354,10 @@
     margin-bottom: 0;
     color: var(--matterColor);
   }
+}
+
+.meta p {
+  line-height: 1.4;
 }
 
 .contactWrapper {

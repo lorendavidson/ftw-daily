@@ -9,8 +9,8 @@ const SectionHeading = props => {
   const {
     richTitle,
     category,
-    address,
-    room
+    room,
+    capacity,
   } = props;
 
   const unitType = config.bookingUnitType;
@@ -18,24 +18,16 @@ const SectionHeading = props => {
   // const isDaily = unitType === LINE_ITEM_DAY;
 
   return (
-    <>
     <div className={css.sectionHeading}>
       <div className={css.heading}>
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.meta}>
           <p>
-            {category}<br />{room}
+            {category}<br />{room}<br />{ capacity ? capacity + ' guests maximum' : null }
           </p>
         </div>
       </div>
     </div>
-    <div className={css.sectionAddress}>
-      <h2 className={css.addressTitle}>
-        <FormattedMessage id="ListingPage.venueAddress" />
-      </h2>
-      <p>{address}</p>
-    </div>
-    </>
   );
 };
 

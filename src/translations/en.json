@@ -196,6 +196,8 @@
   "EditListingCapacityForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingCapacityForm.description": "Set the venue capacity",
   "EditListingCapacityForm.capacityPlaceholder": "Select the venue capacity...",
+  "EditListingCapacityForm.maximum": "Maximum capacity",
+  "EditListingCapacityForm.maximumPlaceholder": "Set capacity as a maximum limit.",
   "EditListingCapacityForm.capacityRequired": "A description is required.",
   "EditListingCapacityPanel.createListingTitle": "What capacity does your venue have?",
   "EditListingCapacityPanel.title": "Edit the capacity of {listingTitle}",

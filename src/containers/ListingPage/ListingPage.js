@@ -51,6 +51,7 @@ import {
 } from './ListingPage.duck';
 import SectionImages from './SectionImages';
 import SectionHeading from './SectionHeading';
+import SectionAddress from './SectionAddress';
 import SectionCapacity from './SectionCapacity';
 import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionFeaturesMaybe from './SectionFeaturesMaybe';
@@ -398,6 +399,7 @@ export class ListingPageComponent extends Component {
 
     const address = publicData && publicData.location ? publicData.location.address : '';
     const room = publicData && publicData.room ? publicData.room : '';
+    const maximum = publicData && publicData.maximum ? publicData.maximum : '';
 
     return (
       <Page
@@ -442,9 +444,10 @@ export class ListingPageComponent extends Component {
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
                     category={category}
-                    address={address}
+                    capacity={maximum}
                     room={room}
                   />
+                  <SectionAddress address={address} />
                   <SectionDescriptionMaybe description={description} />
                   <SectionCapacity publicData={publicData} options={capacityOptions} />
                   <br />

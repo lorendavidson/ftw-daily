@@ -116,7 +116,6 @@ const EditListingDescriptionFormComponent = props => (
             type="text"
             label={roomMessage}
             placeholder={roomPlaceholderMessage}
-            autoFocus
           />
 
           <FieldTextInput

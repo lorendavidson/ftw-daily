@@ -10,7 +10,7 @@ import {
 } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import { required } from '../../util/validators';
-import { Form, Button, FieldSelect } from '../../components';
+import { Form, Button, FieldTextInput, FieldSelect } from '../../components';
 
 // Create this file using EditListingFeaturesForm.module.css
 // as a template.
@@ -36,6 +36,13 @@ export const EditListingCapacityFormComponent = props => (
 
       const capacityPlaceholder = intl.formatMessage({
         id: 'EditListingCapacityForm.capacityPlaceholder',
+      });
+
+      const maximumMessage = intl.formatMessage({
+        id: 'EditListingCapacityForm.maximum'
+      });
+      const maximumPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingCapacityForm.maximumPlaceholder',
       });
 
       const errorMessage = updateError ? (
@@ -72,6 +79,15 @@ export const EditListingCapacityFormComponent = props => (
               </option>
             ))}
           </FieldSelect>
+
+          <FieldTextInput
+            id="maximum"
+            name="maximum"
+            className={css.maximum}
+            type="text"
+            label={maximumMessage}
+            placeholder={maximumPlaceholderMessage}
+          />
 
           <Button
             className={css.submitButton}
