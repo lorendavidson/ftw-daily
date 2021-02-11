@@ -39,14 +39,25 @@
     /* display: flex;
     flex-wrap: wrap; */
 
-    & > div {
-      padding: 0 2rem;
-    }
-
     & > div:nth-child(1) { width: 100% }
     & > div:nth-child(2) { width: 50% }
     & > div:nth-child(3) { width: 50% }
   }
+}
+
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica,Arial,sans-serif;
+}
+
+.mcLabel {
+  display: flex;
+}
+
+.mcInput {
+  width: auto;
+  margin-right: 0.4rem;
 }
 
 /* Prop to be passed to SendMessageForm component */
