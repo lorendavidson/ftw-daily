@@ -447,11 +447,10 @@ export class ListingPageComponent extends Component {
                     capacity={maximum}
                     room={room}
                   />
-                  <SectionAddress address={address} />
+                  <SectionFeaturesMaybe options={amenityOptions} publicData={publicData} />
                   <SectionDescriptionMaybe description={description} />
                   <SectionCapacity publicData={publicData} options={capacityOptions} />
-                  <br />
-                  <SectionFeaturesMaybe options={amenityOptions} publicData={publicData} />
+                  <SectionAddress address={address} />
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}

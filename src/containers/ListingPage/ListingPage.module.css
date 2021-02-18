@@ -330,7 +330,7 @@
 .title {
   /* Font */
   @apply --marketplaceModalTitleStyles;
-  color: var(--matterColor);
+  color: var(--marketplaceColor);
 
   /* Layout */
   width: 100%;

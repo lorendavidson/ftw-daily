@@ -782,7 +782,7 @@
   --marketplaceModalCloseText {
     /* Font */
     @apply --marketplaceH6FontStyles;
-    margin: -2.5px 0 0 0;
+    margin: -1px 0 0 0;
 
     @media (--viewportMedium) {
       margin-top: -1px;

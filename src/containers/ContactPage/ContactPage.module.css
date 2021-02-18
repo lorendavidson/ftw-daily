@@ -5,14 +5,7 @@
 } */
 
 .staticPageWrapper {
-  width: calc(100% - 48px);
-  max-width: 1056px;
-  margin: 24px auto;
-
-  @media (--viewportMedium) {
-    width: calc(100% - 72px);
-    margin: 72px auto;
-  }
+  width: 100%;
 }
 
 .coverImage {
@@ -106,4 +99,10 @@
   @apply --marketplaceH3FontStyles;
   margin-top: 32px;
   margin-bottom: 16px;
+}
+
+iframe {
+  width: 100%;
+  height: 1200px;
+  border: 0;
 }

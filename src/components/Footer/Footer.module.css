@@ -1,13 +1,11 @@
 @import '../../styles/propertySets.css';
 
 .root {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: var(--matterColorNegative);
+  background: var(--marketplaceColorDarker);
+  color: var(--matterColorLight);
 
   width: 100%;
   padding: 24px 24px 42px 24px;
-  background-color: var(--matterColorBright);
 
   @media (--viewportMedium) {
     padding: 0 24px 33px 24px;
@@ -115,6 +113,7 @@
   object-position: left center;
   width: 100%;
   height: 27px;
+  filter: grayscale(1) invert(1);
 }
 
 .organizationInfo {
@@ -130,11 +129,11 @@
 }
 
 .copyrightLink {
-  color: var(--matterColor);
+  color: var(--matterColorAnti);
   transition: var(--transitionStyleButton);
 
   &:hover {
-    color: var(--marketplaceColor);
+    color: var(--matterColorLight);
     text-decoration: none;
   }
 }
@@ -183,6 +182,7 @@
 .listItem {
   min-height: 24px;
   margin-bottom: 6px;
+  line-height: 1.66;
 
   @media (--viewportMedium) {
     margin-bottom: 0;
@@ -193,15 +193,15 @@
   /* Font */
   @apply --marketplaceH5FontStyles;
   line-height: 20px;
-  color: var(--matterColor);
+  color: var(--matterColorLight);
   transition: var(--transitionStyleButton);
 
   margin-top: 0;
   margin-bottom: 12px;
 
   &:hover {
-    color: var(--marketplaceColor);
-    text-decoration: none;
+    color: var(--matterColorLight);
+    text-decoration: underline;
   }
 
   @media (--viewportMedium) {
@@ -257,8 +257,6 @@
 }
 
 .legalMatters {
-  margin-top: 1.1rem;
-
   /* Layout */
   display: flex;
   flex-direction: column;
@@ -286,7 +284,7 @@
   margin-bottom: 0;
 
   &:hover {
-    color: var(--marketplaceColor);
+    color: var(--matterColorLight);
     text-decoration: none;
   }
 
@@ -325,9 +323,7 @@
   @apply --marketplaceTinyFontStyles;
   color: var(--matterColorAnti);
   transition: var(--transitionStyleButton);
-
-  /* Tell parent component how much space this one prefers */
-  flex-basis: 172px;
+  line-height: 22px;
 
   margin-top: 0;
   margin-bottom: 0;
@@ -336,10 +332,6 @@
     color: var(--marketplaceColor);
     text-decoration: none;
   }
-}
-
-.tosAndPrivacyMobile {
-  flex-basis: 172px;
 }
 
 .privacy {
