@@ -1,7 +1,7 @@
 @import '../../styles/propertySets.css';
 
 .root {
-  background: var(--marketplaceColorDarker);
+  background: var(--marketplaceColorDark);
   color: var(--matterColorLight);
 
   width: 100%;

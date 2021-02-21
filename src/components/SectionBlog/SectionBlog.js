@@ -25,8 +25,8 @@ export default class SectionBlog extends React.Component {
           data-rss="https://medium.com/feed/@meltem.algan"
           data-maxcols="3" 
           data-layout="grid" 
-          data-poststyle="inline" 
-          data-readmore="Read the rest" 
+          data-poststyle="external" 
+          data-readmore="Read This Post" 
           data-buttonclass="btn btn-primary" 
           data-offset="-100">
         </div>

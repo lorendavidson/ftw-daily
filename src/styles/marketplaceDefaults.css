@@ -296,6 +296,7 @@ textarea {
   }
 }
 
+/* Blog embed overrides */
 .excerpt p {
   font-size: 0.8rem;
   line-height: 1.5;
@@ -303,4 +304,43 @@ textarea {
 
 .excerpt p:not(:first-of-type), .excerpt h3, .excerpt figure, .excerpt blockquote {
   display: none;
+}
+
+#post-container.rtb-inline .rtb-close {
+  display: flex !important;
+  background: var(--marketplaceColor);
+  color: white;
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--marketplaceColor);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: -80px;
+  right: 0;
+  transform: translateY(50%);
+  transition: 0.2s;
+
+  &:hover {
+    background: white;
+    color: var(--marketplaceColor);
+  }
+
+  &::after {
+    content: '×';
+    display: block;
+    font-size: 1.6rem;
+  }
+}
+
+#post-container.rtb-inline .rtb-close span {
+  display: none;
+}
+
+#post-container.rtb-inline figure {
+  margin-left: 0;
+  margin-right: 0;
 }
