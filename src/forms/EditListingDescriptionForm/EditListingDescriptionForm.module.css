@@ -35,6 +35,10 @@
   composes: formMargins;
 }
 
+.hood {
+  composes: formMargins;
+}
+
 .description {
   composes: formMargins;
   flex-shrink: 0;

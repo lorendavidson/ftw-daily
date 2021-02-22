@@ -55,6 +55,13 @@ const EditListingDescriptionFormComponent = props => (
         id: 'EditListingDescriptionForm.roomPlaceholder',
       });
 
+      const hoodMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.hood'
+      });
+      const hoodPlaceholderMessage = intl.formatMessage({
+        id: 'EditListingDescriptionForm.hoodPlaceholder',
+      });
+
       const descriptionMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.description',
       });
@@ -116,6 +123,15 @@ const EditListingDescriptionFormComponent = props => (
             type="text"
             label={roomMessage}
             placeholder={roomPlaceholderMessage}
+          />
+
+          <FieldTextInput
+            id="hood"
+            name="hood"
+            className={css.hood}
+            type="text"
+            label={hoodMessage}
+            placeholder={hoodPlaceholderMessage}
           />
 
           <FieldTextInput

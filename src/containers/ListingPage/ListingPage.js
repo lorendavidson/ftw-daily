@@ -399,6 +399,7 @@ export class ListingPageComponent extends Component {
 
     const address = publicData && publicData.location ? publicData.location.address : '';
     const room = publicData && publicData.room ? publicData.room : '';
+    const hood = publicData && publicData.hood ? publicData.hood : '';
     const maximum = publicData && publicData.maximum ? publicData.maximum : '';
 
     return (
@@ -446,6 +447,7 @@ export class ListingPageComponent extends Component {
                     category={category}
                     capacity={maximum}
                     room={room}
+                    hood={hood}
                   />
                   <SectionFeaturesMaybe options={amenityOptions} publicData={publicData} />
                   <SectionDescriptionMaybe description={description} />

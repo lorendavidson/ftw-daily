@@ -134,6 +134,7 @@ export const createSearchResultSchema = (listings, address, intl) => {
     const title = l.attributes.title;
     const capacity = l.attributes.capacity;
     const room = l.attributes.room;
+    const hood = l.attributes.hood;
 
     // console.log(l);
 
@@ -147,6 +148,7 @@ export const createSearchResultSchema = (listings, address, intl) => {
       url: `${config.canonicalRootURL}${pathToItem}`,
       name: title,
       room: room,
+      hood: hood,
       capacity: capacity,
     };
   });

@@ -57,6 +57,7 @@ export const ListingCardComponent = props => {
   ) : null;
 
   const room = publicData && publicData.room ? publicData.room : null;
+  const hood = publicData && publicData.hood ? publicData.hood : null;
   const capacity = publicData && publicData.capacity ? publicData.capacity : null;
   const address = publicData && publicData.location ? publicData.location.address : null;
 
@@ -69,9 +70,10 @@ export const ListingCardComponent = props => {
   // console.log(people);
 
   const additional = 
-  room && people && address && category ? (
+  room && hood && people && address && category ? (
     <div>
       <p>{room}</p>
+      <p>{hood}</p>
       <p>{people.label} guests</p>
       <p>{address}</p>
     </div>

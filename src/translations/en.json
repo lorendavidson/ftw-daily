@@ -182,6 +182,8 @@
   "EditListingDescriptionForm.titlePlaceholder": "What's the name of your venue?",
   "EditListingDescriptionForm.room": "Room name",
   "EditListingDescriptionForm.roomPlaceholder": "Is there a specific room name?",
+  "EditListingDescriptionForm.hood": "Neighbourhood",
+  "EditListingDescriptionForm.hoodPlaceholder": "Is this in a particular neighbourhood?",
   "EditListingDescriptionForm.titleRequired": "You need to add a name.",
   "EditListingDescriptionForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingDescriptionPanel.createListingTitle": "Add your venue",

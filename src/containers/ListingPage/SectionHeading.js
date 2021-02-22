@@ -10,12 +10,17 @@ const SectionHeading = props => {
     richTitle,
     category,
     room,
+    hood,
     capacity,
   } = props;
 
-  const unitType = config.bookingUnitType;
+  // const unitType = config.bookingUnitType;
   // const isNightly = unitType === LINE_ITEM_NIGHT;
   // const isDaily = unitType === LINE_ITEM_DAY;
+
+  const roomBlock = (<span><br />{ room }</span>);
+  const capacityBlock = (<span><br />{ capacity } guests maximum</span>);
+  const hoodBlock = (<span><br />{ hood }</span>);
 
   return (
     <div className={css.sectionHeading}>
@@ -23,7 +28,10 @@ const SectionHeading = props => {
         <h1 className={css.title}>{richTitle}</h1>
         <div className={css.meta}>
           <p>
-            {category}<br />{room}<br />{ capacity ? capacity + ' guests maximum' : null }
+            { category }
+            { room ? roomBlock : null }
+            { capacity ? capacityBlock : null }
+            { hood ? hoodBlock : null }
           </p>
         </div>
       </div>
