@@ -63,11 +63,29 @@
 }
 
 .icon {
-  display: inline-block;
-  width: 20px;
-  height: 24px;
-  margin-right: 12px;
-  text-align: center;
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  transition: 0.3s;
+  border: 2px solid white;
+  border-radius: 50%;
+  vertical-align: top;
+
+  &:hover {
+    background: var(--marketplaceColor);
+  }
+
+  @media (--viewportMedium) {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+}
+
+.icon:hover svg {
+  fill: var(--matterColorLight);
 }
 
 /* Footer links */
@@ -143,7 +161,7 @@
 }
 
 .mailChimpWrapper input[type="submit"] {
-  @apply --marketplaceButtonStyles;
+  @apply --marketplaceButtonStylesSecondary;
   max-width: 10rem;
   padding: 0;
   min-height: 0;
