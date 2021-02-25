@@ -44,22 +44,22 @@ export const filters = [
     queryParamNames: ['dates'],
     config: {},
   },
-  {
-    id: 'price',
-    label: 'Price',
-    type: 'PriceFilter',
-    group: 'primary',
-    // Note: PriceFilter is fixed filter,
-    // you can't change "queryParamNames: ['price'],"
-    queryParamNames: ['price'],
-    // Price filter configuration
-    // Note: unlike most prices this is not handled in subunits
-    config: {
-      min: 0,
-      max: 1000,
-      step: 5,
-    },
-  },
+  // {
+  //   id: 'price',
+  //   label: 'Price',
+  //   type: 'PriceFilter',
+  //   group: 'primary',
+  //   // Note: PriceFilter is fixed filter,
+  //   // you can't change "queryParamNames: ['price'],"
+  //   queryParamNames: ['price'],
+  //   // Price filter configuration
+  //   // Note: unlike most prices this is not handled in subunits
+  //   config: {
+  //     min: 0,
+  //     max: 1000,
+  //     step: 5,
+  //   },
+  // },
   {
     id: 'keyword',
     label: 'Keyword',
@@ -155,7 +155,7 @@ export const sortConfig = {
   options: [
     { key: 'createdAt', label: 'Newest' },
     { key: '-createdAt', label: 'Oldest' },
-    { key: '-price', label: 'Lowest price' },
+    // { key: '-price', label: 'Lowest price' },
     { key: 'price', label: 'Highest price' },
 
     // The relevance is only used for keyword search, but the
