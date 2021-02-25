@@ -3,7 +3,6 @@
 .root {
   background: var(--marketplaceColorDark);
   color: var(--matterColorLight);
-
   width: 100%;
   padding: 24px 24px 42px 24px;
 
@@ -26,7 +25,6 @@
 
   @media (--viewportLarge) {
     padding-top: 73px;
-
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: var(--matterColorNegative);
@@ -134,9 +132,6 @@
   filter: grayscale(1) invert(1);
 }
 
-.organizationInfo {
-}
-
 .organizationDescription,
 .organizationCopyright {
   @apply --marketplaceTinyFontStyles;
@@ -213,7 +208,6 @@
   line-height: 20px;
   color: var(--matterColorLight);
   transition: var(--transitionStyleButton);
-
   margin-top: 0;
   margin-bottom: 12px;
 
@@ -260,7 +254,6 @@
   flex-shrink: 0;
   order: 5;
   display: none;
-  flex-basis: 109px;
   margin-right: 24px;
   margin-bottom: 24px;
 
@@ -342,7 +335,6 @@
   color: var(--matterColorAnti);
   transition: var(--transitionStyleButton);
   line-height: 22px;
-
   margin-top: 0;
   margin-bottom: 0;
 

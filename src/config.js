@@ -92,14 +92,10 @@ const canonicalRootURL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 // Site title is needed in meta tags (bots and social media sharing reads those)
 const siteTitle = 'Welcomely';
 
-// Twitter handle is needed in meta tags (twitter:site). Start it with '@' character
-const siteTwitterHandle = '@sharetribe';
-
-// Instagram page is used in SEO schema (http://schema.org/Organization)
-const siteInstagramPage = null;
-
-// Facebook page is used in SEO schema (http://schema.org/Organization)
-const siteFacebookPage = 'https://www.facebook.com/Sharetribe/';
+const siteTwitterHandle = null;
+const siteInstagramPage = 'https://www.instagram.com/welcomely.app/';
+const siteFacebookPage = 'https://www.facebook.com/Welcomely-106920981051542';
+const siteLinkedinPage = 'https://www.linkedin.com/company/welcomely-app';
 
 // Social logins & SSO
 
@@ -221,6 +217,7 @@ const config = {
   siteTitle,
   siteFacebookPage,
   siteInstagramPage,
+  siteLinkedinPage,
   siteTwitterHandle,
   facebookAppId,
   sentryDsn,

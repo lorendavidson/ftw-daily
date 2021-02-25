@@ -150,13 +150,12 @@
   --marketplaceModalTitleStyles: {
     font-weight: var(--fontWeightSemiBold);
     font-size: 30px;
-    line-height: 36px;
+    line-height: 1.1;
     letter-spacing: -0.5px;
     margin: 0;
 
     @media (--viewportMedium) {
       font-weight: var(--fontWeightSemiBold);
-      line-height: 40px;
       margin: 0;
     }
   }
@@ -166,7 +165,7 @@
   --marketplaceH1FontStyles: {
     font-weight: var(--fontWeightSemiBold);
     font-size: 24px;
-    line-height: 30px;
+    line-height: 1.3;
     letter-spacing: -0.5px;
     /* margin-top + n * line-height + margin-bottom => x * 6px */
     margin-top: 18px;
@@ -175,7 +174,6 @@
     @media (--viewportMedium) {
       font-size: 40px;
       font-weight: var(--fontWeightSemiBold);
-      line-height: 48px;
       letter-spacing: -1px;
       /* margin-top + n * line-height + margin-bottom => x * 8px */
       margin-top: 24px;
@@ -186,14 +184,11 @@
   --marketplaceH2FontStyles: {
     font-weight: var(--fontWeightSemiBold);
     font-size: 21px;
-    line-height: 24px;
-    /* margin-top + n * line-height + margin-bottom => x * 6px */
+    line-height: 1.3;
     margin-top: 21px;
     margin-bottom: 17px;
 
     @media (--viewportMedium) {
-      line-height: 32px;
-      /* margin-top + n * line-height + margin-bottom => x * 8px */
       margin-top: 21px;
       margin-bottom: 19px;
     }
@@ -202,7 +197,7 @@
   --marketplaceH3FontStyles: {
     font-weight: var(--fontWeightSemiBold);
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.3;
     /* margin-top + n * line-height + margin-bottom => x * 6px */
     margin-top: 16px;
     margin-bottom: 14px;
@@ -217,7 +212,7 @@
   --marketplaceH4FontStyles: {
     font-weight: var(--fontWeightMedium);
     font-size: 15px;
-    line-height: 24px;
+    line-height: 1.3;
     letter-spacing: 0;
     /* margin-top + n * line-height + margin-bottom => x * 6px */
     margin-top: 12px;
@@ -234,14 +229,13 @@
   --marketplaceH5FontStyles: {
     font-weight: var(--fontWeightMedium);
     font-size: 14px;
-    line-height: 18px;
+    line-height: 1.3;
     letter-spacing: 0;
     /* margin-top + n * line-height + margin-bottom => x * 6px */
     margin-top: 10px;
     margin-bottom: 8px;
 
     @media (--viewportMedium) {
-      line-height: 16px;
       /* margin-top + n * line-height + margin-bottom => x * 8px */
       margin-top: 10px;
       margin-bottom: 14px;
@@ -251,7 +245,7 @@
   --marketplaceH6FontStyles: {
     font-weight: var(--fontWeightBold);
     font-size: 12px;
-    line-height: 18px;
+    line-height: 1.3;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     /* margin-top + n * line-height + margin-bottom => x * 6px */
@@ -259,7 +253,6 @@
     margin-bottom: 8px;
 
     @media (--viewportMedium) {
-      line-height: 16px;
       /* margin-top + n * line-height + margin-bottom => x * 8px */
       margin-top: 10px;
       margin-bottom: 6px;
@@ -272,14 +265,13 @@
     font-family: var(--fontFamily);
     font-weight: var(--fontWeightRegular);
     font-size: 13px;
-    line-height: 18px;
+    line-height: 1.3;
     /* margin-top + n * line-height + margin-bottom => x * 6px */
     margin-top: 9.5px;
     margin-bottom: 8.5px;
     -webkit-font-smoothing: subpixel-antialiased;
 
     @media (--viewportMedium) {
-      line-height: 16px;
       /* margin-top + n * line-height + margin-bottom => x * 8px */
       margin-top: 10.5px;
       margin-bottom: 13.5px;

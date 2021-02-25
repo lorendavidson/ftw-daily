@@ -36,10 +36,8 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperMain,
   LayoutWrapperFooter,
-  Button,
   Footer,
   BookingPanel,
-  ContactPanel
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
@@ -324,6 +322,7 @@ export class ListingPageComponent extends Component {
         imageCarouselOpen: true,
       });
     };
+
     const authorAvailable = currentListing && currentListing.author;
     const userAndListingAuthorAvailable = !!(currentUser && authorAvailable);
     const isOwnListing =

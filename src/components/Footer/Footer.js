@@ -14,18 +14,33 @@ import {
 } from '../../components';
 
 import css from './Footer.module.css';
+import IconSocialMediaLinkedin from '../IconSocialMediaLinkedin/IconSocialMediaLinkedin';
 
 const renderSocialMediaLinks = intl => {
-  const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
+  const { siteFacebookPage, siteYoutubePage, siteInstagramPage, siteTwitterHandle, siteLinkedinPage } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
   const goToFb = intl.formatMessage({ id: 'Footer.goToFacebook' });
+  const goToIg = intl.formatMessage({ id: 'Footer.goToInstagram' });
+  const goToLi = intl.formatMessage({ id: 'Footer.goToLinkedin' });
   const goToInsta = intl.formatMessage({ id: 'Footer.goToInstagram' });
   const goToTwitter = intl.formatMessage({ id: 'Footer.goToTwitter' });
 
   const fbLink = siteFacebookPage ? (
     <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
       <IconSocialMediaFacebook />
+    </ExternalLink>
+  ) : null;
+
+  const liLink = siteLinkedinPage ? (
+    <ExternalLink key="linkToLinkedin" href={siteLinkedinPage} className={css.icon} title={goToLi}>
+      <IconSocialMediaLinkedin />
+    </ExternalLink>
+  ) : null;
+
+  const ytLink = siteYoutubePage ? (
+    <ExternalLink key="linkToInstagram" href={siteInstagramPage} className={css.icon} title={goToIg}>
+      <IconSocialMediaYoutube />
     </ExternalLink>
   ) : null;
 
@@ -51,7 +66,7 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
-  return [fbLink, twitterLink, instragramLink].filter(v => v != null);
+  return [fbLink, ytLink, liLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
 const Footer = props => {
