@@ -15,7 +15,6 @@ import {
   LimitedAccessBanner,
   Logo,
   Modal,
-  ModalMissingInformation,
   NamedLink,
   TopbarDesktop,
   TopbarMobileMenu,
@@ -95,17 +94,28 @@ class TopbarComponent extends Component {
     redirectToURLWithoutModalState(this.props, 'mobilesearch');
   }
 
+  // handleSubmit(values) {
+  //   const { currentSearchParams } = this.props;
+  //   const { search, selectedPlace } = values.location;
+  //   const { history } = this.props;
+  //   const { origin, bounds } = selectedPlace;
+  //   const originMaybe = config.sortSearchByDistance ? { origin } : {};
+  //   const searchParams = {
+  //     ...currentSearchParams,
+  //     ...originMaybe,
+  //     address: search,
+  //     bounds,
+  //   };
+  //   history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, searchParams));
+  // }
+
   handleSubmit(values) {
     const { currentSearchParams } = this.props;
-    const { search, selectedPlace } = values.location;
+    const keywords = values.keywords;
     const { history } = this.props;
-    const { origin, bounds } = selectedPlace;
-    const originMaybe = config.sortSearchByDistance ? { origin } : {};
     const searchParams = {
       ...currentSearchParams,
-      ...originMaybe,
-      address: search,
-      bounds,
+      keywords,
     };
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, searchParams));
   }
@@ -139,16 +149,12 @@ class TopbarComponent extends Component {
       authInProgress,
       currentUser,
       currentUserHasListings,
-      currentUserHasOrders,
       currentPage,
       notificationCount,
       viewport,
       intl,
       location,
       onManageDisableScrolling,
-      onResendVerificationEmail,
-      sendVerificationEmailInProgress,
-      sendVerificationEmailError,
       showGenericError,
     } = this.props;
 

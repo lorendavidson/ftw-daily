@@ -306,6 +306,15 @@ textarea {
   display: none;
 }
 
+.flex-wrap {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
 #post-container.rtb-inline .rtb-close {
   display: flex !important;
   background: var(--marketplaceColor);
