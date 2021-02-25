@@ -9,36 +9,23 @@ import { propTypes, LISTING_STATE_CLOSED, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from 
 import { formatMoney } from '../../util/currency';
 import { parse, stringify } from '../../util/urlHelpers';
 import config from '../../config';
-import { ModalInMobile, InlineTextButton, Button } from '../../components';
-import { BookingDatesForm, SendMessageForm } from '../../forms';
+import { ModalInMobile } from '../../components';
+import { BookingDatesForm } from '../../forms';
 
 import css from './BookingPanel.module.css';
 
 // This defines when ModalInMobile shows content as Modal
 const MODAL_BREAKPOINT = 1023;
 
-const priceData = (price, intl) => {
-  if (price && price.currency === config.currency) {
-    const formattedPrice = formatMoney(intl, price);
-    return { formattedPrice, priceTitle: formattedPrice };
-  } else if (price) {
-    return {
-      formattedPrice: `(${price.currency})`,
-      priceTitle: `Unsupported currency (${price.currency})`,
-    };
-  }
-  return {};
-};
-
-const openBookModal = (isOwnListing, isClosed, history, location) => {
-  if (isOwnListing || isClosed) {
-    window.scrollTo(0, 0);
-  } else {
-    const { pathname, search, state } = location;
-    const searchString = `?${stringify({ ...parse(search), book: true })}`;
-    history.push(`${pathname}${searchString}`, state);
-  }
-};
+// const openBookModal = (isOwnListing, isClosed, history, location) => {
+//   if (isOwnListing || isClosed) {
+//     window.scrollTo(0, 0);
+//   } else {
+//     const { pathname, search, state } = location;
+//     const searchString = `?${stringify({ ...parse(search), book: true })}`;
+//     history.push(`${pathname}${searchString}`, state);
+//   }
+// };
 
 const closeBookModal = (history, location) => {
   const { pathname, search, state } = location;
@@ -69,16 +56,13 @@ const BookingPanel = props => {
     lineItems,
     fetchLineItemsInProgress,
     fetchLineItemsError,
-    showContactUser,
-    onContactUser,
   } = props;
 
   const price = listing.attributes.price;
   const hasListingState = !!listing.attributes.state;
   const isClosed = hasListingState && listing.attributes.state === LISTING_STATE_CLOSED;
-  const showBookingDatesForm = false; // hasListingState && !isClosed;
+  const showBookingDatesForm = hasListingState && !isClosed;
   const showClosedListingHelpText = listing.id && isClosed;
-  const { formattedPrice, priceTitle } = priceData(price, intl);
   const isBook = !!parse(location.search).book;
 
   const subTitleText = !!subTitle
@@ -123,22 +107,22 @@ const BookingPanel = props => {
           </div>
         ) : null}
 
-        {showContactUser ? (
-          <span className={css.contactWrapper}>
-            <Button rootClassName={css.contactLink} onClick={onContactUser}>
-              <FormattedMessage id="ListingPage.contactUser" />
-            </Button>
-            <SendMessageForm
-              formId=""
-              rootClassName={css.sendMessageForm}
-              messagePlaceholder="Write your message here..."
-              inProgress={false}
-              sendMessageError={false}
-              onFocus={() => null}
-              onBlur={() => null}
-              onSubmit={() => null}
-            />
-          </span>
+        {showBookingDatesForm ? (
+          <BookingDatesForm
+            className={css.bookingForm}
+            formId="BookingPanel"
+            submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
+            unitType={unitType}
+            onSubmit={onSubmit}
+            listingId={listing.id}
+            isOwnListing={isOwnListing}
+            timeSlots={timeSlots}
+            fetchTimeSlotsError={fetchTimeSlotsError}
+            onFetchTransactionLineItems={onFetchTransactionLineItems}
+            lineItems={lineItems}
+            fetchLineItemsInProgress={fetchLineItemsInProgress}
+            fetchLineItemsError={fetchLineItemsError}
+          />
         ) : null}
 
       </ModalInMobile>

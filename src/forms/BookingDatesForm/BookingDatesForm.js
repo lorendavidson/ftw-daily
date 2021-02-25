@@ -71,25 +71,6 @@ export class BookingDatesFormComponent extends Component {
     const { rootClassName, className, price: unitPrice, ...rest } = this.props;
     const classes = classNames(rootClassName || css.root, className);
 
-    if (!unitPrice) {
-      return (
-        <div className={classes}>
-          <p className={css.error}>
-            <FormattedMessage id="BookingDatesForm.listingPriceMissing" />
-          </p>
-        </div>
-      );
-    }
-    if (unitPrice.currency !== config.currency) {
-      return (
-        <div className={classes}>
-          <p className={css.error}>
-            <FormattedMessage id="BookingDatesForm.listingCurrencyInvalid" />
-          </p>
-        </div>
-      );
-    }
-
     return (
       <FinalForm
         {...rest}
@@ -152,15 +133,6 @@ export class BookingDatesFormComponent extends Component {
           const showEstimatedBreakdown =
             bookingData && lineItems && !fetchLineItemsInProgress && !fetchLineItemsError;
 
-          const bookingInfoMaybe = showEstimatedBreakdown ? (
-            <div className={css.priceBreakdownContainer}>
-              <h3 className={css.priceBreakdownTitle}>
-                <FormattedMessage id="BookingDatesForm.priceBreakdownTitle" />
-              </h3>
-              <EstimatedBreakdownMaybe bookingData={bookingData} lineItems={lineItems} />
-            </div>
-          ) : null;
-
           const loadingSpinnerMaybe = fetchLineItemsInProgress ? (
             <IconSpinner className={css.spinner} />
           ) : null;
@@ -222,7 +194,6 @@ export class BookingDatesFormComponent extends Component {
                 disabled={fetchLineItemsInProgress}
               />
 
-              {bookingInfoMaybe}
               {loadingSpinnerMaybe}
               {bookingInfoErrorMaybe}
 

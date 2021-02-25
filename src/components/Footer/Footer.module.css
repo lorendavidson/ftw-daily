@@ -62,8 +62,8 @@
 
 .icon {
   display: inline-flex;
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
   margin: 0.5rem;
   justify-content: center;
   align-items: center;
@@ -156,7 +156,7 @@
 }
 
 .mailChimpWrapper input[type="submit"] {
-  @apply --marketplaceButtonStylesSecondary;
+  @apply --marketplaceButtonStyles;
   max-width: 10rem;
   padding: 0;
   min-height: 0;
