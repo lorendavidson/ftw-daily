@@ -1,8 +1,8 @@
 @import '../../styles/propertySets.css';
 
 .root {
-  background: var(--marketplaceColorDark);
-  color: var(--matterColorLight);
+  background: var(--matterColorNegative);
+  color: var(--matterColor);
   width: 100%;
   padding: 24px 24px 42px 24px;
 
@@ -67,14 +67,15 @@
   margin: 0.5rem;
   justify-content: center;
   align-items: center;
-  background: white;
+  background: var(--marketplaceColor);
   transition: 0.3s;
-  border: 2px solid white;
+  border: 2px solid var(--marketplaceColor);
   border-radius: 50%;
   vertical-align: top;
 
   &:hover {
-    background: var(--marketplaceColor);
+    background: var(--matterColorLight);
+    border-color: var(--matterColorLight);
   }
 
   @media (--viewportMedium) {
@@ -83,7 +84,7 @@
 }
 
 .icon:hover svg {
-  fill: var(--matterColorLight);
+  fill: var(--marketplaceColor);
 }
 
 /* Footer links */
@@ -129,7 +130,7 @@
   object-position: left center;
   width: 100%;
   height: 27px;
-  filter: grayscale(1) invert(1);
+  /* filter: grayscale(1) invert(1); */
 }
 
 .organizationDescription,
@@ -142,11 +143,11 @@
 }
 
 .copyrightLink {
-  color: var(--matterColorAnti);
+  color: var(--matterColor);
   transition: var(--transitionStyleButton);
 
   &:hover {
-    color: var(--matterColorLight);
+    color: var(--matterColor);
     text-decoration: none;
   }
 }
@@ -154,6 +155,10 @@
 .mailChimpWrapper {
   margin-bottom: 2rem;
 }
+
+/* .mailChimpWrapper input[type="email"] {
+  border-color: var(--matterColorLight);
+} */
 
 .mailChimpWrapper input[type="submit"] {
   @apply --marketplaceButtonStyles;
@@ -195,7 +200,7 @@
 .listItem {
   min-height: 24px;
   margin-bottom: 6px;
-  line-height: 1.66;
+  line-height: 1.935;
 
   @media (--viewportMedium) {
     margin-bottom: 0;
@@ -206,13 +211,13 @@
   /* Font */
   @apply --marketplaceH5FontStyles;
   line-height: 20px;
-  color: var(--matterColorLight);
+  color: var(--matterColor);
   transition: var(--transitionStyleButton);
   margin-top: 0;
   margin-bottom: 12px;
 
   &:hover {
-    color: var(--matterColorLight);
+    color: var(--matterColor);
     text-decoration: underline;
   }
 
@@ -288,14 +293,14 @@
 .terms {
   /* Font */
   @apply --marketplaceTinyFontStyles;
-  color: var(--matterColorAnti);
+  color: var(--matterColor);
   transition: var(--transitionStyleButton);
 
   margin-top: 0;
   margin-bottom: 0;
 
   &:hover {
-    color: var(--matterColorLight);
+    color: var(--matterColor);
     text-decoration: none;
   }
 
@@ -332,7 +337,7 @@
 .organizationCopyrightMobile {
   /* Font */
   @apply --marketplaceTinyFontStyles;
-  color: var(--matterColorAnti);
+  color: var(--matterColor);
   transition: var(--transitionStyleButton);
   line-height: 22px;
   margin-top: 0;

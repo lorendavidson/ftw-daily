@@ -34,16 +34,16 @@
  */
 
 export const filters = [
-  {
-    id: 'dates',
-    label: 'Dates',
-    type: 'BookingDateRangeFilter',
-    group: 'primary',
-    // Note: BookingDateRangeFilter is fixed filter,
-    // you can't change "queryParamNames: ['dates'],"
-    queryParamNames: ['dates'],
-    config: {},
-  },
+  // {
+  //   id: 'dates',
+  //   label: 'Dates',
+  //   type: 'BookingDateRangeFilter',
+  //   group: 'primary',
+  //   // Note: BookingDateRangeFilter is fixed filter,
+  //   // you can't change "queryParamNames: ['dates'],"
+  //   queryParamNames: ['dates'],
+  //   config: {},
+  // },
   // {
   //   id: 'price',
   //   label: 'Price',

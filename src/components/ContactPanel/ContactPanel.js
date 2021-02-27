@@ -40,7 +40,7 @@ export default class ContactPanel extends React.Component {
           </label>
           <div className="flex-wrap">
             <label style={{ marginRight: '1rem', marginBottom: '1rem' }}>
-              Meeting Date
+              Preferred Meeting Date
               <input style={{ height: '34px' }} type="date" name="date" />
             </label>
             <label>
