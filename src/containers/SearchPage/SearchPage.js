@@ -326,9 +326,8 @@ SearchPage.loadData = (params, search) => {
     ...originMaybe,
     page,
     perPage: RESULT_PAGE_SIZE,
-    include: ['author', 'images'],
-    'fields.listing': ['title', 'geolocation', 'room', 'hood', 'capacity'],
-    'fields.user': ['profile.displayName', 'profile.abbreviatedName'],
+    include: ['images'],
+    'fields.listing': ['title', 'geolocation', 'publicData'],
     'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
     'limit.images': 1,
   });

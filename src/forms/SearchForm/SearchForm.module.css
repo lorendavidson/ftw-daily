@@ -1,5 +1,56 @@
 @import '../../styles/propertySets.css';
 
+.root {
+  position: relative;
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  width: 48px;
+  align-self: stretch;
+  /* border-bottom: 2px solid var(--marketplaceColor); */
+  background-color: var(--matterColorLight);
+}
+
+.iconSvg {
+  margin: auto;
+}
+
+.iconSvgGroup {
+  stroke: var(--marketplaceColor);
+  stroke-width: 2.5px;
+
+  @media (--viewportMedium) {
+    stroke-width: 2px;
+  }
+}
+
+.iconSpinner {
+  margin: auto;
+  width: 23px;
+}
+
+.input {
+  flex-grow: 1;
+  height: var(--LocationAutocompleteInput_inputHeight);
+  /* padding-left: 10px; */
+  margin: 0;
+  line-height: unset;
+  border-bottom-width: 2px;
+
+  /* Safari bugfix: without this Safari will print placeholder to a wrong place */
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--marketplaceColor);
+    outline: none;
+  }
+}
+
 .mobileInputRoot {
   width: 100%;
 }
@@ -68,7 +119,7 @@
   border: none;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 
   /* Search text gets ellipsis if it's too wide */
   text-overflow: ellipsis;

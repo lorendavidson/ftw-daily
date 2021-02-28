@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { Form, LocationAutocompleteInput } from '../../components';
 
 import css from './SearchForm.module.css';
+import IconHourGlass from './IconHourGlass';
 
 const identity = v => v;
 
@@ -40,24 +41,29 @@ class SearchFormComponent extends Component {
           const classes = classNames(rootClassName, className);
           return (
             <Form className={classes} onSubmit={handleSubmit}>
-              <Field
-                name="keywords"
-                render={({ input, meta }) => {
-                  return (
-                    <input
-                      className={isMobile ? css.mobileInput : css.desktopInput}
-                      {...input}
-                      id="keyword-search"
-                      ref={this.searchInput}
-                      type="text"
-                      placeholder={intl.formatMessage({
-                        id: 'SearchForm.placeholder',
-                      })}
-                      autoComplete="off"
-                    />
-                  );
-                }}
-              />
+              <div className={css.root}>
+                <div className={css.icon}>
+                  <IconHourGlass />
+                </div>
+                <Field
+                  name="keywords"
+                  render={({ input, meta }) => {
+                    return (
+                      <input
+                        className={isMobile ? css.mobileInput : css.desktopInput}
+                        {...input}
+                        id="keyword-search"
+                        ref={this.searchInput}
+                        type="text"
+                        placeholder={intl.formatMessage({
+                          id: 'SearchForm.placeholder',
+                        })}
+                        autoComplete="off"
+                      />
+                    );
+                  }}
+                />
+              </div>
             </Form>
           );
         }}

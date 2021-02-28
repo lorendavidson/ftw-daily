@@ -69,16 +69,6 @@ export const ListingCardComponent = props => {
   // const people = capacityOptions[capacity];
   // console.log(people);
 
-  const additional = 
-  room && hood && people && address && category ? (
-    <div>
-      <p>{room}</p>
-      <p>{hood}</p>
-      <p>{people.label} guests</p>
-      <p>{address}</p>
-    </div>
-  ) : null;
-
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
       <div
@@ -106,7 +96,10 @@ export const ListingCardComponent = props => {
           </div>
         </div>
         <div>
-          {additional}
+          { room ? (<p>{room}</p>) : null }
+          { hood ? (<p>{hood}</p>) : null }
+          { people ? (<p>{people.label} guests</p>) : null }
+          { address ? (<p>{address}</p>) : null }
         </div>
       </div>
     </NamedLink>
