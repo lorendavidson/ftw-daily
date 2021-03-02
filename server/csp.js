@@ -27,6 +27,8 @@ const defaultDirectives = {
     '*.amazonaws.com',
     '*.herokuapp.com',
     '*.list-manage.com',
+    '*.twilik.com',
+    '*.medium.com',
 
     // Google Analytics
     'www.google-analytics.com',
@@ -47,6 +49,8 @@ const defaultDirectives = {
     '*.amazonaws.com',
     '*.herokuapp.com',
     '*.list-manage.com',
+    '*.twilik.com',
+    '*.medium.com',
   ],
   imgSrc: [
     self,
@@ -63,6 +67,8 @@ const defaultDirectives = {
     '*.amazonaws.com',
     '*.herokuapp.com',
     '*.list-manage.com',
+    '*.twilik.com',
+    '*.medium.com',
 
     'api.mapbox.com',
     'maps.googleapis.com',
@@ -89,6 +95,8 @@ const defaultDirectives = {
     '*.amazonaws.com',
     '*.herokuapp.com',
     '*.list-manage.com',
+    '*.twilik.com',
+    '*.medium.com',
   ],
   styleSrc: [
     self,
@@ -98,6 +106,8 @@ const defaultDirectives = {
     '*.amazonaws.com',
     '*.herokuapp.com',
     '*.list-manage.com',
+    '*.twilik.com',
+    '*.medium.com',
   ],
 };
 
