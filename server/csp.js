@@ -24,6 +24,9 @@ const defaultDirectives = {
     '*.tiles.mapbox.com',
     'api.mapbox.com',
     'events.mapbox.com',
+    '*.amazonaws.com',
+    '*.herokuapp.com',
+    '*.list-manage.com',
 
     // Google Analytics
     'www.google-analytics.com',
@@ -32,8 +35,19 @@ const defaultDirectives = {
     'sentry.io',
     '*.stripe.com',
   ],
-  fontSrc: [self, data, 'assets-sharetribecom.sharetribe.com', 'fonts.gstatic.com'],
-  frameSrc: [self, '*.stripe.com'],
+  fontSrc: [
+    self,
+    data,
+    'assets-sharetribecom.sharetribe.com',
+    'fonts.gstatic.com'
+  ],
+  frameSrc: [
+    self,
+    '*.stripe.com',
+    '*.amazonaws.com',
+    '*.herokuapp.com',
+    '*.list-manage.com',
+  ],
   imgSrc: [
     self,
     data,
@@ -45,6 +59,10 @@ const defaultDirectives = {
     // Styleguide placeholder images
     'lorempixel.com',
     'via.placeholder.com',
+
+    '*.amazonaws.com',
+    '*.herokuapp.com',
+    '*.list-manage.com',
 
     'api.mapbox.com',
     'maps.googleapis.com',
@@ -68,8 +86,19 @@ const defaultDirectives = {
     'api.mapbox.com',
     '*.google-analytics.com',
     'js.stripe.com',
+    '*.amazonaws.com',
+    '*.herokuapp.com',
+    '*.list-manage.com',
   ],
-  styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
+  styleSrc: [
+    self,
+    unsafeInline,
+    'fonts.googleapis.com',
+    'api.mapbox.com',
+    '*.amazonaws.com',
+    '*.herokuapp.com',
+    '*.list-manage.com',
+  ],
 };
 
 /**
