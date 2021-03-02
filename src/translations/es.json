@@ -350,7 +350,7 @@
   "ListingPage.reviewsError": "Error al cargar las valoraciones.",
   "ListingPage.reviewsHeading": "Valoraciones ({count})",
   "ListingPage.rulesTitle": "Reglas del sauna",
-  "ListingPage.schemaTitle": "{title} - {price} | {siteTitle}",
+  "ListingPage.schemaTitle": "{title} - {siteTitle}",
   "ListingPage.viewImagesButton": "Ver fotos ({count})",
   "ListingPage.yourHostHeading": "Tu anfitrión",
   "LocationAutocompleteInput.currentLocation": "Ubicación actual",

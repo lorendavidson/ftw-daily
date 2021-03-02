@@ -80,7 +80,7 @@
 
   /* Layout */
   margin: 0 24px 0 0;
-  padding: 4px 13px 10px 13px;
+  padding: 4px 13px 4px 0;
   height: var(--SearchForm_inputHeight);
   line-height: unset;
 

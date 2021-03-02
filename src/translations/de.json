@@ -345,7 +345,7 @@
   "ListingPage.reviewsError": "Bewertungen konnten nicht geladen werden.",
   "ListingPage.reviewsHeading": "Bewertungen ({count})",
   "ListingPage.rulesTitle": "Sauna-Regeln",
-  "ListingPage.schemaTitle": "{title} - {price} | {siteTitle}",
+  "ListingPage.schemaTitle": "{title} - {siteTitle}",
   "ListingPage.viewImagesButton": "Fotos anzeigen ({count})",
   "ListingPage.yourHostHeading": "Dein(e) Gastgeber(in)",
   "LocationAutocompleteInput.currentLocation": "Aktueller Standort",

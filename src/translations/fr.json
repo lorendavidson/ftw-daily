@@ -381,7 +381,7 @@
   "ListingPage.reviewsError": "Impossible de charger les commentaires.",
   "ListingPage.reviewsHeading": "Commentaires ({count})",
   "ListingPage.rulesTitle": "Règlement",
-  "ListingPage.schemaTitle": "{title} - {price} | {siteTitle}",
+  "ListingPage.schemaTitle": "{title} - {siteTitle}",
   "ListingPage.viewImagesButton": "Voir les images ({count})",
   "ListingPage.yourHostHeading": "Votre hôte",
   "LocationAutocompleteInput.currentLocation": "Emplacement actuel",

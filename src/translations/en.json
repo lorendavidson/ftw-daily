@@ -407,7 +407,7 @@
   "ListingPage.reviewsError": "Loading reviews failed.",
   "ListingPage.reviewsHeading": "Reviews ({count})",
   "ListingPage.rulesTitle": "Venue rules",
-  "ListingPage.schemaTitle": "{title} - {price} | {siteTitle}",
+  "ListingPage.schemaTitle": "{title} - {siteTitle}",
   "ListingPage.viewImagesButton": "View photos ({count})",
   "ListingPage.yourHostHeading": "Your host",
   "LocationAutocompleteInput.currentLocation": "Current location",
