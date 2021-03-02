@@ -115,7 +115,7 @@ export const filters = [
         },
         {
           key: 'food',
-          label: 'Food & Beverages',
+          label: 'Food & Beverage',
           description: 'Additional description for this amenity',
         },
       ],
