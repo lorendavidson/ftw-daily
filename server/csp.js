@@ -29,6 +29,7 @@ const defaultDirectives = {
     '*.list-manage.com',
     '*.twilik.com',
     '*.medium.com',
+    '*.rss2json.com',
 
     // Google Analytics
     'www.google-analytics.com',
@@ -51,6 +52,7 @@ const defaultDirectives = {
     '*.list-manage.com',
     '*.twilik.com',
     '*.medium.com',
+    '*.rss2json.com',
   ],
   imgSrc: [
     self,
@@ -69,6 +71,7 @@ const defaultDirectives = {
     '*.list-manage.com',
     '*.twilik.com',
     '*.medium.com',
+    '*.rss2json.com',
 
     'api.mapbox.com',
     'maps.googleapis.com',
@@ -97,6 +100,7 @@ const defaultDirectives = {
     '*.list-manage.com',
     '*.twilik.com',
     '*.medium.com',
+    '*.rss2json.com',
   ],
   styleSrc: [
     self,
@@ -108,6 +112,7 @@ const defaultDirectives = {
     '*.list-manage.com',
     '*.twilik.com',
     '*.medium.com',
+    '*.rss2json.com',
   ],
 };
 
