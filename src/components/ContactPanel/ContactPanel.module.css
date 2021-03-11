@@ -1,0 +1,16 @@
+@import '../../styles/propertySets.css';
+
+.panelWrapper {
+  background: var(--matterColorNegative);
+  padding: 1rem 2rem 2rem;
+  margin-top: 2rem;
+  align-self: flex-start;
+
+  @media (--viewportLarge) {
+    margin-left: 2rem;
+  }
+}
+
+.panelWrapper label {
+  margin-bottom: 1rem;
+}

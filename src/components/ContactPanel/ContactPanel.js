@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from '../../components';
 
+import css from './ContactPanel.module.css';
+
 export default class ContactPanel extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +22,7 @@ export default class ContactPanel extends React.Component {
   render() {
     const { status } = this.state;
     return (
-      <div style={{ padding: '2rem' }}>
+      <div className={css.panelWrapper}>
         <div>
           <h2>{this.props.title}</h2>
           {this.props.subTitle ? <p>{this.props.subTitle}</p> : null}
@@ -30,16 +32,16 @@ export default class ContactPanel extends React.Component {
           action="https://formspree.io/f/mrgowbqr"
           method="POST"
         >
-          <label style={{ marginBottom: '1rem' }}>
+          <label>
             Name
             <input type="name" placeholder="Your name" name="name" />
           </label>
-          <label style={{ marginBottom: '1rem' }}>
+          <label>
             Email Address
             <input type="email" placeholder="Your email" name="email" />
           </label>
-          <div className="flex-wrap">
-            <label style={{ marginRight: '1rem', marginBottom: '1rem' }}>
+          <div className="flex-wrap combo">
+            <label style={{ marginRight: '1rem' }}>
               Preferred Meeting Date
               <input style={{ height: '34px' }} type="date" name="date" />
             </label>
@@ -48,7 +50,7 @@ export default class ContactPanel extends React.Component {
               <input placeholder="1" style={{ height: '34px' }} type="number" name="guests" />
             </label>
           </div>
-          <label style={{ margin: '1rem 0 2rem' }}>
+          <label>
             Message
             <input type="text" placeholder="Your message" name="message" />
           </label>
